@@ -39,19 +39,20 @@
 
   <!-- ملف التنسيقات المخصصة -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Microsoft Clarity Tracking Code -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yg3kxy913q");
-</script>
+  </script>
 </head>
 <body class="bg-[#0e0b07] text-white font-cairo selection:bg-brand-gold selection:text-black">
 
   <!-- شريط التنقل العلوي Navbar -->
-  <nav class="sticky top-0 z-50 bg-[#0e0b07]/90 backdrop-blur-md border-b border-stone-800 px-4 lg:px-12 py-3 flex items-center justify-between">
-    <!-- الشعار -->
+  <nav class="sticky top-0 z-40 bg-[#0e0b07]/90 backdrop-blur-md border-b border-stone-800 px-4 lg:px-12 py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-12 h-12 rounded-full border-2 border-brand-gold flex flex-col items-center justify-center text-center p-1 bg-black shadow-md shadow-brand-gold/10">
         <i class="fa-solid fa-utensils text-brand-gold text-xs"></i>
@@ -62,18 +63,17 @@
       </div>
     </div>
 
-    <!-- الروابط -->
     <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
       <a href="#hero" class="text-brand-gold border-b-2 border-brand-gold pb-1">الرئيسية</a>
+      <a href="#bestsellers" class="text-stone-300 hover:text-brand-gold transition">الأكثر طلباً</a>
       <a href="#menu" class="text-stone-300 hover:text-brand-gold transition">المنيو</a>
       <a href="#offers" class="text-stone-300 hover:text-brand-gold transition">العروض</a>
-      <a href="#catering" class="text-stone-300 hover:text-brand-gold transition">العزومات</a>
       <a href="#reviews" class="text-stone-300 hover:text-brand-gold transition">آراء العملاء</a>
       <a href="#contact" class="text-stone-300 hover:text-brand-gold transition">تواصل معنا</a>
     </div>
 
     <!-- زر واتساب الرئيسي -->
-    <button onclick="sendGeneralOrder()" class="bg-brand-green hover:bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
+    <button onclick="openOrderModal('طلب عام من المنيو', 0, false)" class="bg-brand-green hover:bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
       <i class="fa-brands fa-whatsapp text-lg"></i>
       <span>اطلب الآن عبر واتساب</span>
     </button>
@@ -146,7 +146,7 @@
         <div class="p-4 text-center">
           <h4 class="font-bold text-base text-white">بامية باللحم</h4>
           <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
-          <button onclick="orderItem('بامية باللحم', 280)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('بامية باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -158,7 +158,7 @@
         <div class="p-4 text-center">
           <h4 class="font-bold text-base text-white">دجاج مشوي</h4>
           <span class="block font-black text-brand-gold text-lg my-1">250 جنيه</span>
-          <button onclick="orderItem('دجاج مشوي', 250)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('دجاج مشوي', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -170,7 +170,7 @@
         <div class="p-4 text-center">
           <h4 class="font-bold text-base text-white">ملاح لحم</h4>
           <span class="block font-black text-brand-gold text-lg my-1">300 جنيه</span>
-          <button onclick="orderItem('ملاح لحم', 300)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('ملاح لحم', 300, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -182,7 +182,7 @@
         <div class="p-4 text-center">
           <h4 class="font-bold text-base text-white">كبسة سودانية</h4>
           <span class="block font-black text-brand-gold text-lg my-1">260 جنيه</span>
-          <button onclick="orderItem('كبسة سودانية', 260)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('كبسة سودانية', 260, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -194,7 +194,7 @@
         <div class="p-4 text-center">
           <h4 class="font-bold text-base text-white">ويكة باللحم</h4>
           <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
-          <button onclick="orderItem('ويكة باللحم', 280)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('ويكة باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -211,43 +211,44 @@
       </div>
 
       <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <!-- العزومات مع تفعيل خاصية العربون الإلزامي -->
+        <div onclick="openOrderModal('طلب من تصنيف: العزومات الكبيرة', 0, true)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
           <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">العزومات الكبيرة</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: الباقات العائلية', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الباقات العائلية">
           <i class="fa-solid fa-users text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">الباقات العائلية</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: الأطباق الرئيسية', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الأطباق الرئيسية">
           <i class="fa-solid fa-utensils text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">الأطباق الرئيسية</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: المكرونة', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المكرونة">
           <i class="fa-solid fa-bowl-rice text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">المكرونة</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: السلطات والإضافات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="السلطات">
           <i class="fa-solid fa-leaf text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">السلطات والإضافات</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: المخبوزات والمعجنات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المخبوزات">
           <i class="fa-solid fa-bread-slice text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">المخبوزات</span>
         </div>
 
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+        <div onclick="openOrderModal('طلب من تصنيف: الحلويات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الحلويات">
           <i class="fa-solid fa-cake-candles text-brand-darkGold text-sm"></i>
           <span class="block text-xs font-bold mt-1">الحلويات</span>
@@ -264,7 +265,7 @@
         <div>
           <h4 class="text-xl font-extrabold text-white">أول طلب؟</h4>
           <p class="text-sm font-bold text-red-300 mt-1">التوصيل مجاناً</p>
-          <button onclick="orderPromo('عرض أول طلب مجاني للتوصيل')" class="mt-4 inline-block bg-white text-red-950 px-4 py-1.5 rounded-full text-xs font-black hover:bg-stone-200 transition">
+          <button onclick="openOrderModal('عرض أول طلب مجاني للتوصيل', 0, false)" class="mt-4 inline-block bg-white text-red-950 px-4 py-1.5 rounded-full text-xs font-black hover:bg-stone-200 transition">
             الطلب الآن &larr;
           </button>
         </div>
@@ -276,19 +277,19 @@
         <div>
           <h4 class="text-xl font-extrabold text-brand-gold">باقات عائلية</h4>
           <p class="text-sm text-stone-300 mt-1">مذاق يجمع العائلة</p>
-          <button onclick="orderPromo('استفسار عن الباقات العائلية')" class="mt-4 inline-block bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs font-black hover:bg-emerald-800 transition">
+          <button onclick="openOrderModal('عرض الباقات العائلية', 0, false)" class="mt-4 inline-block bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs font-black hover:bg-emerald-800 transition">
             عرض الباقات &larr;
           </button>
         </div>
         <i class="fa-solid fa-bowl-food text-5xl text-brand-gold/60"></i>
       </div>
 
-      <!-- بنر 3 -->
+      <!-- بنر 3 (عزومات - يتطلب عربون) -->
       <div id="catering" class="bg-amber-950/50 border border-amber-900/50 p-6 rounded-3xl flex items-center justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-white">مناسبة قريبة؟</h4>
           <p class="text-sm text-amber-200 mt-1">دع تجهيز العزومة علينا</p>
-          <button onclick="orderPromo('تجهيز عزومة خاصة')" class="mt-4 inline-block bg-brand-gold text-black px-4 py-1.5 rounded-full text-xs font-black hover:bg-brand-darkGold transition">
+          <button onclick="openOrderModal('تجهيز عزومة ومناسبة خاصة', 0, true)" class="mt-4 inline-block bg-brand-gold text-black px-4 py-1.5 rounded-full text-xs font-black hover:bg-brand-darkGold transition">
             جهّز عزومتي &larr;
           </button>
         </div>
@@ -340,7 +341,7 @@
       <h3 class="text-3xl font-extrabold text-brand-gold">اطلب الآن</h3>
       <p class="text-stone-300 text-sm">تواصل معنا عبر واتساب واستمتع بأفضل الأطباق السودانية</p>
       
-      <button onclick="sendGeneralOrder()" class="inline-flex items-center gap-3 bg-brand-green hover:bg-emerald-600 text-white font-black px-8 py-3.5 rounded-full text-base shadow-xl transition transform hover:scale-105">
+      <button onclick="openOrderModal('طلب من تواصل معنا', 0, false)" class="inline-flex items-center gap-3 bg-brand-green hover:bg-emerald-600 text-white font-black px-8 py-3.5 rounded-full text-base shadow-xl transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
         <span>اطلب عبر واتساب</span>
       </button>
@@ -384,7 +385,235 @@
     </div>
   </footer>
 
-  <!-- ملف المنطق البرمجي والتفاعل -->
-  <script src="./assets/js/main.js"></script>
+  <!-- النافذة المنبثقة لإلزام العميل بالبيانات قبل الواتساب (Order Modal) -->
+  <div id="orderModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
+    <div class="bg-[#15100a] border border-stone-700 w-full max-w-lg rounded-3xl p-5 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto custom-scroll">
+      
+      <!-- زر الإغلاق -->
+      <button onclick="closeOrderModal()" class="absolute top-4 left-4 text-stone-400 hover:text-white bg-stone-800 w-8 h-8 rounded-full flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="text-right mb-4">
+        <h3 class="text-xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-receipt"></i>
+          <span>استكمال بيانات الطلب</span>
+        </h3>
+        <p class="text-xs text-stone-400 mt-1">يرجى ملء البيانات التالية لتأكيد تجهيز طلبك بدقة</p>
+      </div>
+
+      <!-- ملخص الصنف المختار -->
+      <div class="bg-stone-900/90 border border-brand-gold/30 rounded-2xl p-3.5 mb-4 text-right flex justify-between items-center">
+        <div>
+          <span class="text-[11px] text-stone-400 block">الطلب المختار:</span>
+          <span id="modalItemTitle" class="text-sm font-black text-white"></span>
+        </div>
+        <span id="modalItemPrice" class="text-brand-gold font-extrabold text-sm"></span>
+      </div>
+
+      <!-- نموذج البيانات الإلزامي -->
+      <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4 text-right">
+        
+        <!-- الاسم -->
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1.5">الاسم بالكامل <span class="text-red-500">*</span></label>
+          <input type="text" id="custName" required placeholder="أدخل اسمك الكريم"
+                 class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+        </div>
+
+        <!-- اختيار المنطقة -->
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1.5">منطقة التوصيل <span class="text-red-500">*</span></label>
+          <select id="custArea" required
+                  class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+            <option value="" disabled selected>اختر منطقة التوصيل...</option>
+            <option value="المعادي">المعادي</option>
+            <option value="المقطم">المقطم</option>
+            <option value="مدينة نصر">مدينة نصر</option>
+            <option value="فيصل">فيصل</option>
+            <option value="المهندسين">المهندسين</option>
+            <option value="منطقة أخرى">منطقة أخرى (يرجى التوضيح في العنوان)</option>
+          </select>
+        </div>
+
+        <!-- العنوان بالتفصيل -->
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1.5">العنوان بالتفصيل <span class="text-red-500">*</span></label>
+          <textarea id="custAddress" required rows="2" placeholder="اسم الشارع، رقم العمارة، الطابق، رقم الشقة، علامة مميزة"
+                    class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-gold transition"></textarea>
+        </div>
+
+        <!-- ميعاد الاستلام -->
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1.5">ميعاد الاستلام المطلوب <span class="text-red-500">*</span></label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 bg-stone-900 border border-stone-700 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold transition">
+              <input type="radio" name="timingType" value="الآن (بأسرع وقت)" checked onchange="toggleTimingInput(false)" class="accent-brand-gold">
+              <span>الآن (بأسرع وقت)</span>
+            </label>
+            <label class="flex items-center gap-2 bg-stone-900 border border-stone-700 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold transition">
+              <input type="radio" name="timingType" value="لاحقاً" onchange="toggleTimingInput(true)" class="accent-brand-gold">
+              <span>تحديد موعد لاحق</span>
+            </label>
+          </div>
+          <div id="laterTimeField" class="hidden mt-2">
+            <input type="text" id="custCustomTime" placeholder="مثال: اليوم الساعة 8:00 مساءً أو غداً ظهراً"
+                   class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-brand-gold transition">
+          </div>
+        </div>
+
+        <!-- طريقة الدفع -->
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1.5">طريقة الدفع <span class="text-red-500">*</span></label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 bg-stone-900 border border-stone-700 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold transition">
+              <input type="radio" name="paymentMethod" value="الدفع نقداً عند الاستلام (كاش)" checked class="accent-brand-gold">
+              <span>عند الاستلام (كاش)</span>
+            </label>
+            <label class="flex items-center gap-2 bg-stone-900 border border-stone-700 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold transition">
+              <input type="radio" name="paymentMethod" value="تحويل مسبق (InstaPay / فودافون كاش)" class="accent-brand-gold">
+              <span>تحويل إلكتروني</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- شرط خاص بالعزومات (يظهر ويلزم العميل فقط عند اختيار العزومات) -->
+        <div id="cateringNoticeBox" class="hidden bg-amber-950/60 border-2 border-amber-500/80 p-3.5 rounded-2xl space-y-2">
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-brand-gold text-base mt-0.5"></i>
+            <div class="text-xs text-amber-200">
+              <span class="font-bold text-brand-gold block">شرط حجز العزومات:</span>
+              نظراً لتجهيز وجبات العزومات الكبيرة بمكونات طازجة ومخصصة، يلزم سداد <span class="underline font-bold text-white">عربون حجز مسبق</span> لتأكيد الطلب.
+            </div>
+          </div>
+          <label class="flex items-center gap-2 text-xs font-bold text-white bg-black/40 p-2 rounded-xl border border-amber-600/40 cursor-pointer">
+            <input type="checkbox" id="depositAgreement" class="w-4 h-4 accent-brand-gold">
+            <span>أوافق وأتعهد بدفع عربون تأكيد حجز العزومة <span class="text-red-400">*</span></span>
+          </label>
+        </div>
+
+        <!-- زر الإرسال لواتساب -->
+        <button type="submit" class="w-full bg-brand-green hover:bg-emerald-600 text-white font-black py-3 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          <span>إرسال الطلب عبر واتساب</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- منطق إدارة الطلب والتحقق والتوجيه للواتساب -->
+  <script>
+    // ضع رقم واتساب المطعم هنا (مع كود الدولة وبدون إشارة +)
+    const WHATSAPP_PHONE = "201005825888";
+
+    let currentOrder = {
+      title: "",
+      price: 0,
+      isCatering: false
+    };
+
+    function openOrderModal(title, price = 0, isCatering = false) {
+      currentOrder.title = title;
+      currentOrder.price = price;
+      currentOrder.isCatering = isCatering || title.includes("عزوم") || title.includes("العزومات");
+
+      document.getElementById('modalItemTitle').textContent = currentOrder.title;
+      document.getElementById('modalItemPrice').textContent = currentOrder.price > 0 ? `${currentOrder.price} جنيه` : 'حسب الاختيار';
+
+      const cateringBox = document.getElementById('cateringNoticeBox');
+      const depositCheck = document.getElementById('depositAgreement');
+
+      if (currentOrder.isCatering) {
+        cateringBox.classList.remove('hidden');
+        depositCheck.checked = false;
+      } else {
+        cateringBox.classList.add('hidden');
+        depositCheck.checked = false;
+      }
+
+      document.getElementById('orderModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOrderModal() {
+      document.getElementById('orderModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function toggleTimingInput(show) {
+      const field = document.getElementById('laterTimeField');
+      const input = document.getElementById('custCustomTime');
+      if (show) {
+        field.classList.remove('hidden');
+        input.required = true;
+        input.focus();
+      } else {
+        field.classList.add('hidden');
+        input.required = false;
+        input.value = '';
+      }
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('custName').value.trim();
+      const area = document.getElementById('custArea').value;
+      const address = document.getElementById('custAddress').value.trim();
+      const timingType = document.querySelector('input[name="timingType"]:checked').value;
+      const customTime = document.getElementById('custCustomTime').value.trim();
+      const payment = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const depositAgreement = document.getElementById('depositAgreement');
+
+      if (!name || !area || !address) {
+        alert("يرجى ملء جميع البيانات الإلزامية.");
+        return;
+      }
+
+      if (timingType === 'لاحقاً' && !customTime) {
+        alert("يرجى كتابة الموعد المحدد المطلوب للاستلام.");
+        return;
+      }
+
+      // إلزام دفع العربون في حالة العزومات
+      if (currentOrder.isCatering && !depositAgreement.checked) {
+        alert("تنبيه: حجز العزومات يتطلب الموافقة على سداد العربون لتأكيد الطلب.");
+        depositAgreement.focus();
+        return;
+      }
+
+      const timingFinal = timingType === 'لاحقاً' ? `لاحقاً (${customTime})` : 'الآن (بأسرع وقت)';
+      const priceText = currentOrder.price > 0 ? `${currentOrder.price} جنيه` : 'يحدد مع الإدارة';
+
+      let msg = `مرحباً "ملح وملاح" 👋\n`;
+      msg += `أود تأكيد طلب جديد من خلال المنيو:\n\n`;
+      msg += `🍽️ *تفاصيل الطلب:*\n`;
+      msg += `• الصنف: *${currentOrder.title}*\n`;
+      msg += `• القيمة: *${priceText}*\n\n`;
+      msg += `👤 *بيانات العميل والتوصيل:*\n`;
+      msg += `• الاسم: *${name}*\n`;
+      msg += `• منطقة التوصيل: *${area}*\n`;
+      msg += `• العنوان بالتفصيل: *${address}*\n`;
+      msg += `• موعد الاستلام: *${timingFinal}*\n`;
+      msg += `• طريقة الدفع: *${payment}*\n`;
+
+      if (currentOrder.isCatering) {
+        msg += `\n⚠️ *ملاحظة حجز عزومة:* تم الإقرار بدفع عربون الحجز، برجاء إرسال تفاصيل التحويل لتأكيد التجهيز.`;
+      }
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+      
+      closeOrderModal();
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // إغلاق النافذة عند النقر خارج المحتوى
+    window.onclick = function(event) {
+      const modal = document.getElementById('orderModal');
+      if (event.target === modal) {
+        closeOrderModal();
+      }
+    };
+  </script>
 </body>
 </html>
