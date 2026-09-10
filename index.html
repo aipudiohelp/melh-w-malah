@@ -1,1 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملح وملاح | أكل سوداني أصيل بطعم البيت</title>
+  
+  <!-- خط Cairo من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- مكتبة الأيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#E5A93C',
+              darkGold: '#C68A27',
+              dark: '#0e0b07',
+              cardDark: '#1a140f',
+              green: '#16a34a',
+              wa: '#25D366'
+            }
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
+  <!-- ملف التنسيقات المخصصة -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-[#0e0b07] text-white font-cairo selection:bg-brand-gold selection:text-black">
+
+  <!-- شريط التنقل العلوي Navbar -->
+  <nav class="sticky top-0 z-50 bg-[#0e0b07]/90 backdrop-blur-md border-b border-stone-800 px-4 lg:px-12 py-3 flex items-center justify-between">
+    <!-- الشعار -->
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full border-2 border-brand-gold flex flex-col items-center justify-center text-center p-1 bg-black shadow-md shadow-brand-gold/10">
+        <i class="fa-solid fa-utensils text-brand-gold text-xs"></i>
+        <span class="text-[10px] font-bold text-white leading-tight">ملح وملاح</span>
+      </div>
+      <div>
+        <span class="text-xs text-stone-400 font-bold tracking-wider block">MELH W MALAH</span>
+      </div>
+    </div>
+
+    <!-- الروابط -->
+    <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+      <a href="#hero" class="text-brand-gold border-b-2 border-brand-gold pb-1">الرئيسية</a>
+      <a href="#menu" class="text-stone-300 hover:text-brand-gold transition">المنيو</a>
+      <a href="#offers" class="text-stone-300 hover:text-brand-gold transition">العروض</a>
+      <a href="#catering" class="text-stone-300 hover:text-brand-gold transition">العزومات</a>
+      <a href="#reviews" class="text-stone-300 hover:text-brand-gold transition">آراء العملاء</a>
+      <a href="#contact" class="text-stone-300 hover:text-brand-gold transition">تواصل معنا</a>
+    </div>
+
+    <!-- زر واتساب الرئيسي -->
+    <button onclick="sendGeneralOrder()" class="bg-brand-green hover:bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+      <span>اطلب الآن عبر واتساب</span>
+    </button>
+  </nav>
+
+  <!-- القسم الترحيبي Hero -->
+  <header id="hero" class="relative hero-gradient pt-14 pb-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-brand-gold text-xs font-bold shadow-inner">
+        <span>من السودان إلى مائدتكم</span>
+        <span>•</span>
+        <span>الطعم يجمعنا</span>
+      </div>
+
+      <h1 class="text-5xl lg:text-7xl font-black text-brand-gold tracking-tight drop-shadow-md">
+        ملح وملاح
+      </h1>
+      <h2 class="text-2xl lg:text-3xl font-bold text-stone-100">
+        أكل سوداني أصيل بطعم البيت
+      </h2>
+      <p class="text-stone-300 text-base lg:text-lg">
+        تذوّق النكهة السودانية بكل حب
+      </p>
+
+      <!-- المميزات الأربعة -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-8 max-w-3xl mx-auto">
+        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
+          <i class="fa-solid fa-seedling text-brand-gold text-2xl mb-2"></i>
+          <span class="text-xs font-bold text-stone-200">مكونات طازجة وعالية الجودة</span>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
+          <i class="fa-solid fa-kitchen-set text-brand-gold text-2xl mb-2"></i>
+          <span class="text-xs font-bold text-stone-200">أطباق منزلية بطعم أصيل</span>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
+          <i class="fa-solid fa-motorcycle text-brand-gold text-2xl mb-2"></i>
+          <span class="text-xs font-bold text-stone-200">توصيل سريع وآمن</span>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
+          <i class="fa-solid fa-heart text-brand-gold text-2xl mb-2"></i>
+          <span class="text-xs font-bold text-stone-200">ثقة وآراء عملاء حقيقية</span>
+        </div>
+      </div>
+
+      <!-- مناطق التوصيل -->
+      <div class="mt-6 inline-flex items-center gap-2 bg-stone-900/95 border border-stone-700/60 px-5 py-2 rounded-full text-xs text-stone-300 shadow-md">
+        <i class="fa-solid fa-location-dot text-brand-gold"></i>
+        <span class="font-bold text-brand-gold">مناطق التوصيل:</span>
+        <span>المعادي | المقطم | مدينة نصر | فيصل | المهندسين</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- تصنيفات المنيو -->
+  <section id="menu" class="py-12 bg-white text-stone-900 rounded-t-3xl -mt-6 relative z-10 shadow-2xl">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl lg:text-3xl font-black">تصفح المنيو</h3>
+        <p class="text-stone-500 text-sm mt-1">اختر ما يناسبك من أصنافنا المتنوعة</p>
+      </div>
+
+      <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
+          <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">العزومات الكبيرة</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الباقات العائلية">
+          <i class="fa-solid fa-users text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الباقات العائلية</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الأطباق الرئيسية">
+          <i class="fa-solid fa-utensils text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الأطباق الرئيسية</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المكرونة">
+          <i class="fa-solid fa-bowl-rice text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">المكرونة</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="السلطات">
+          <i class="fa-solid fa-leaf text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">السلطات والإضافات</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المخبوزات">
+          <i class="fa-solid fa-bread-slice text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">المخبوزات</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الحلويات">
+          <i class="fa-solid fa-cake-candles text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الحلويات</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الأكثر طلباً -->
+  <section class="py-14 px-4 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+      <div>
+        <h3 class="text-2xl lg:text-3xl font-extrabold text-brand-gold">الأكثر طلباً</h3>
+        <p class="text-stone-400 text-sm">أصنافنا المميزة التي نالت إعجاب عملائنا</p>
+      </div>
+      <a href="#menu" class="border border-brand-gold text-brand-gold px-5 py-2 rounded-full text-xs font-bold hover:bg-brand-gold hover:text-black transition">
+        عرض جميع الأصناف &larr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <!-- كارت 1 -->
+      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
+        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="بامية باللحم">
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-base text-white">بامية باللحم</h4>
+          <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
+          <button onclick="orderItem('بامية باللحم', 280)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كارت 2 -->
+      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
+        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="دجاج مشوي">
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-base text-white">دجاج مشوي</h4>
+          <span class="block font-black text-brand-gold text-lg my-1">250 جنيه</span>
+          <button onclick="orderItem('دجاج مشوي', 250)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كارت 3 -->
+      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="ملاح لحم">
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-base text-white">ملاح لحم</h4>
+          <span class="block font-black text-brand-gold text-lg my-1">300 جنيه</span>
+          <button onclick="orderItem('ملاح لحم', 300)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كارت 4 -->
+      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="كبسة سودانية">
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-base text-white">كبسة سودانية</h4>
+          <span class="block font-black text-brand-gold text-lg my-1">260 جنيه</span>
+          <button onclick="orderItem('كبسة سودانية', 260)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كارت 5 -->
+      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
+        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="ويكة باللحم">
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-base text-white">ويكة باللحم</h4>
+          <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
+          <button onclick="orderItem('ويكة باللحم', 280)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- بنرات العروض الترويجية -->
+  <section id="offers" class="py-6 px-4 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- بنر 1 -->
+      <div class="bg-red-950/70 border border-red-900/60 p-6 rounded-3xl flex items-center justify-between">
+        <div>
+          <h4 class="text-xl font-extrabold text-white">أول طلب؟</h4>
+          <p class="text-sm font-bold text-red-300 mt-1">التوصيل مجاناً</p>
+          <button onclick="orderPromo('عرض أول طلب مجاني للتوصيل')" class="mt-4 inline-block bg-white text-red-950 px-4 py-1.5 rounded-full text-xs font-black hover:bg-stone-200 transition">
+            الطلب الآن &larr;
+          </button>
+        </div>
+        <i class="fa-solid fa-motorcycle text-5xl text-red-400/70"></i>
+      </div>
+
+      <!-- بنر 2 -->
+      <div class="bg-stone-900 border border-stone-800 p-6 rounded-3xl flex items-center justify-between">
+        <div>
+          <h4 class="text-xl font-extrabold text-brand-gold">باقات عائلية</h4>
+          <p class="text-sm text-stone-300 mt-1">مذاق يجمع العائلة</p>
+          <button onclick="orderPromo('استفسار عن الباقات العائلية')" class="mt-4 inline-block bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs font-black hover:bg-emerald-800 transition">
+            عرض الباقات &larr;
+          </button>
+        </div>
+        <i class="fa-solid fa-bowl-food text-5xl text-brand-gold/60"></i>
+      </div>
+
+      <!-- بنر 3 -->
+      <div id="catering" class="bg-amber-950/50 border border-amber-900/50 p-6 rounded-3xl flex items-center justify-between">
+        <div>
+          <h4 class="text-xl font-extrabold text-white">مناسبة قريبة؟</h4>
+          <p class="text-sm text-amber-200 mt-1">دع تجهيز العزومة علينا</p>
+          <button onclick="orderPromo('تجهيز عزومة خاصة')" class="mt-4 inline-block bg-brand-gold text-black px-4 py-1.5 rounded-full text-xs font-black hover:bg-brand-darkGold transition">
+            جهّز عزومتي &larr;
+          </button>
+        </div>
+        <i class="fa-solid fa-utensils text-5xl text-amber-500/70"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- آراء العملاء -->
+  <section id="reviews" class="py-14 px-4 bg-stone-950">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-2xl lg:text-3xl font-extrabold text-white">ماذا يقول عملاؤنا؟</h3>
+      <p class="text-stone-400 text-sm mt-1">تجارب حقيقية من قلب مطبخ ملح وملاح</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
+          <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
+          <p class="text-sm text-stone-200 leading-relaxed">"جودة عالية وتوصيل سريع، والأهم التعامل الراقي."</p>
+          <div class="flex text-amber-400 text-xs gap-1 my-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-xs text-stone-400 font-bold">عميل من المعادي</span>
+        </div>
+
+        <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
+          <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
+          <p class="text-sm text-stone-200 leading-relaxed">"الطعم سوداني أصيل وكأنك في البيت، ما شاء الله تبارك الله."</p>
+          <div class="flex text-amber-400 text-xs gap-1 my-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-xs text-stone-400 font-bold">عميل من مدينة نصر</span>
+        </div>
+
+        <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
+          <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
+          <p class="text-sm text-stone-200 leading-relaxed">"أكل نظيف وطعم ممتاز وخدمة راقية، أنصح الجميع بالتجربة."</p>
+          <div class="flex text-amber-400 text-xs gap-1 my-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-xs text-stone-400 font-bold">عميل من المقطم</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الدعوة للإجراء وتواصل معنا -->
+  <section id="contact" class="py-12 px-4 text-center border-t border-stone-800">
+    <div class="max-w-2xl mx-auto space-y-4">
+      <h3 class="text-3xl font-extrabold text-brand-gold">اطلب الآن</h3>
+      <p class="text-stone-300 text-sm">تواصل معنا عبر واتساب واستمتع بأفضل الأطباق السودانية</p>
+      
+      <button onclick="sendGeneralOrder()" class="inline-flex items-center gap-3 bg-brand-green hover:bg-emerald-600 text-white font-black px-8 py-3.5 rounded-full text-base shadow-xl transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span>اطلب عبر واتساب</span>
+      </button>
+
+      <!-- ميزات الختام -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
+          <i class="fa-solid fa-location-dot text-brand-gold"></i>
+          في مناطق محددة
+        </div>
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
+          <i class="fa-solid fa-motorcycle text-brand-gold"></i>
+          توصيل سريع
+        </div>
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
+          <i class="fa-solid fa-leaf text-brand-gold"></i>
+          طعم أصيل
+        </div>
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
+          <i class="fa-solid fa-shield-halved text-brand-gold"></i>
+          جودة مضمونة
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر Footer -->
+  <footer class="bg-black py-8 px-4 border-t border-stone-900 text-center text-xs text-stone-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="text-base font-extrabold text-white block">ملح وملاح</span>
+        <span>أكل سوداني أصيل .. من بيتنا إلى بيتك</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-stone-400">
+        <span>تابعونا على:</span>
+        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ملف المنطق البرمجي والتفاعل -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
