@@ -127,62 +127,8 @@
     </div>
   </header>
 
-  <!-- تصنيفات المنيو -->
-  <section id="menu" class="py-12 bg-white text-stone-900 rounded-t-3xl -mt-6 relative z-10 shadow-2xl">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl lg:text-3xl font-black">تصفح المنيو</h3>
-        <p class="text-stone-500 text-sm mt-1">اختر ما يناسبك من أصنافنا المتنوعة</p>
-      </div>
-
-      <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
-          <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">العزومات الكبيرة</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الباقات العائلية">
-          <i class="fa-solid fa-users text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الباقات العائلية</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الأطباق الرئيسية">
-          <i class="fa-solid fa-utensils text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الأطباق الرئيسية</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المكرونة">
-          <i class="fa-solid fa-bowl-rice text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">المكرونة</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="السلطات">
-          <i class="fa-solid fa-leaf text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">السلطات والإضافات</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المخبوزات">
-          <i class="fa-solid fa-bread-slice text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">المخبوزات</span>
-        </div>
-
-        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الحلويات">
-          <i class="fa-solid fa-cake-candles text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الحلويات</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- الأكثر طلباً -->
-  <section class="py-14 px-4 max-w-6xl mx-auto">
+  <!-- الأكثر طلباً (أولاً) -->
+  <section id="bestsellers" class="py-14 px-4 max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
       <div>
         <h3 class="text-2xl lg:text-3xl font-extrabold text-brand-gold">الأكثر طلباً</h3>
@@ -251,6 +197,60 @@
           <button onclick="orderItem('ويكة باللحم', 280)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- تصفح المنيو (ثانياً) -->
+  <section id="menu" class="py-12 bg-white text-stone-900 rounded-3xl mx-4 lg:mx-auto max-w-6xl shadow-2xl mb-12">
+    <div class="px-4">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl lg:text-3xl font-black">تصفح المنيو</h3>
+        <p class="text-stone-500 text-sm mt-1">اختر ما يناسبك من أصنافنا المتنوعة</p>
+      </div>
+
+      <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
+          <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">العزومات الكبيرة</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الباقات العائلية">
+          <i class="fa-solid fa-users text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الباقات العائلية</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الأطباق الرئيسية">
+          <i class="fa-solid fa-utensils text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الأطباق الرئيسية</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المكرونة">
+          <i class="fa-solid fa-bowl-rice text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">المكرونة</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="السلطات">
+          <i class="fa-solid fa-leaf text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">السلطات والإضافات</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المخبوزات">
+          <i class="fa-solid fa-bread-slice text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">المخبوزات</span>
+        </div>
+
+        <div class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الحلويات">
+          <i class="fa-solid fa-cake-candles text-brand-darkGold text-sm"></i>
+          <span class="block text-xs font-bold mt-1">الحلويات</span>
         </div>
       </div>
     </div>
