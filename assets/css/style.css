@@ -1,1 +1,50 @@
+/* إعدادات الخط العام */
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #0e0b07;
+  color: #ffffff;
+  overflow-x: hidden;
+}
 
+/* خلفية وتدرج الهيدر الرئيسي */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(14, 11, 7, 0.85) 0%, rgba(14, 11, 7, 0.98) 100%),
+              url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* شريط تمرير أنيق للتصنيفات في الموبايل */
+.custom-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #E5A93C;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #C68A27;
+}
+
+/* تأثيرات حركية على كروت الأصناف والعروض */
+.transition-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.transition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(229, 169, 60, 0.15);
+}
+
+/* تحسين استجابة العرض على الشاشات الصغيرة */
+@media (max-width: 640px) {
+  .hero-gradient {
+    background-attachment: scroll;
+  }
+}
