@@ -127,7 +127,7 @@
     </div>
   </header>
 
-  <!-- الأكثر طلباً (تمرير جانبي سلس يميناً ويساراً) -->
+  <!-- الأكثر طلباً (أفقياً مع الصور الحقيقية والأسعار المحدثة) -->
   <section id="bestsellers" class="py-14 px-4 max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
       <div>
@@ -135,7 +135,7 @@
         <p class="text-stone-400 text-sm">مرر لمشاهدة أشهى أطباقنا المختارة</p>
       </div>
       
-      <!-- أزرار التحكم بالتمرير للكمبيوتر وشاشات اللمس -->
+      <!-- أزرار التحكم بالتمرير -->
       <div class="flex items-center gap-3">
         <button onclick="scrollSlider(-1)" aria-label="السابق" class="w-9 h-9 rounded-full border border-stone-700 bg-stone-900 hover:border-brand-gold hover:text-brand-gold text-stone-300 flex items-center justify-center transition shadow">
           <i class="fa-solid fa-chevron-right text-sm"></i>
@@ -149,75 +149,86 @@
     <!-- حاوية التمرير الأفقي للأطباق -->
     <div id="mealsSlider" class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
       
-      <!-- كارت 1: بامية باللحم -->
-      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
-        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="بامية باللحم">
-        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+      <!-- 1. أقاشي سوداني -->
+      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
+        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
+          🔥 الأكثر طلباً
+        </span>
+        <img src="./assets/agashi.png" class="h-44 w-full object-cover" alt="أقاشي سوداني">
+        <div class="p-4 text-right flex-grow flex flex-col justify-between">
           <div>
-            <h4 class="font-bold text-base text-white">بامية باللحم</h4>
-            <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
+            <div class="flex justify-between items-center mb-1">
+              <h4 class="font-extrabold text-base text-white">أقاشي سوداني</h4>
+              <span class="font-black text-brand-gold text-base">200 ج.م</span>
+            </div>
+            <p class="text-[11px] text-stone-400 leading-snug">لحم متبل ببهارات الكولاي الأصلية، يُقدم مع شرائح البصل والليمون والشطة الحارة.</p>
           </div>
-          <button onclick="openOrderModal('بامية باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('أقاشي سوداني', 200, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 2: دجاج مشوي -->
-      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
-        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="دجاج مشوي">
-        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+      <!-- 2. كمونية سودانية -->
+      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
+        <span class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
+          ⭐ نكهة أصيلة
+        </span>
+        <img src="./assets/kamonia.png" class="h-44 w-full object-cover" alt="كمونية سودانية">
+        <div class="p-4 text-right flex-grow flex flex-col justify-between">
           <div>
-            <h4 class="font-bold text-base text-white">دجاج مشوي</h4>
-            <span class="block font-black text-brand-gold text-lg my-1">250 جنيه</span>
+            <div class="flex justify-between items-center mb-1">
+              <h4 class="font-extrabold text-base text-white">كمونية سودانية</h4>
+              <span class="font-black text-brand-gold text-base">200 ج.م</span>
+            </div>
+            <p class="text-[11px] text-stone-400 leading-snug">مزيج شهي من الكرشة واللحم المطهو في صلصة الطماطم المسبكة مع الزيتون والبهارات.</p>
           </div>
-          <button onclick="openOrderModal('دجاج مشوي', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('كمونية سودانية', 200, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 3: ملاح لحم -->
-      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="ملاح لحم">
-        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+      <!-- 3. بامية مفروكة -->
+      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
+        <span class="absolute top-3 right-3 bg-emerald-700 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
+          🌿 طعم بيتي
+        </span>
+        <img src="./assets/bamya-mafrooka.png" class="h-44 w-full object-cover" alt="بامية مفروكة">
+        <div class="p-4 text-right flex-grow flex flex-col justify-between">
           <div>
-            <h4 class="font-bold text-base text-white">ملاح لحم</h4>
-            <span class="block font-black text-brand-gold text-lg my-1">300 جنيه</span>
+            <div class="flex justify-between items-center mb-1">
+              <h4 class="font-extrabold text-base text-white">بامية مفروكة</h4>
+              <span class="font-black text-brand-gold text-base">200 ج.م</span>
+            </div>
+            <p class="text-[11px] text-stone-400 leading-snug">بامية ناعمة ومفروكة بعناية على الطريقة السودانية الأصيلة بمكونات طازجة وغنية.</p>
           </div>
-          <button onclick="openOrderModal('ملاح لحم', 300, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('بامية مفروكة', 200, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 4: كبسة سودانية -->
-      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
-        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="كبسة سودانية">
-        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+      <!-- 4. طبيخ بامية باللحم -->
+      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
+        <span class="absolute top-3 right-3 bg-brand-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
+          🥩 لحم طازج
+        </span>
+        <img src="./assets/bamya-lahm.png" class="h-44 w-full object-cover" alt="طبيخ بامية باللحم">
+        <div class="p-4 text-right flex-grow flex flex-col justify-between">
           <div>
-            <h4 class="font-bold text-base text-white">كبسة سودانية</h4>
-            <span class="block font-black text-brand-gold text-lg my-1">260 جنيه</span>
+            <div class="flex justify-between items-center mb-1">
+              <h4 class="font-extrabold text-base text-white">بامية باللحم</h4>
+              <span class="font-black text-brand-gold text-base">200 ج.م</span>
+            </div>
+            <p class="text-[11px] text-stone-400 leading-snug">قطع لحم بلدي طري مطبوخ مع قرون البامية في صلصة الطماطم الغنية بالبهارات السودانية.</p>
           </div>
-          <button onclick="openOrderModal('كبسة سودانية', 260, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+          <button onclick="openOrderModal('بامية باللحم', 200, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 5: ويكة باللحم -->
-      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
-        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="ويكة باللحم">
-        <div class="p-4 text-center flex-grow flex flex-col justify-between">
-          <div>
-            <h4 class="font-bold text-base text-white">ويكة باللحم</h4>
-            <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
-          </div>
-          <button onclick="openOrderModal('ويكة باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
-            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
-          </button>
-        </div>
-      </div>
     </div>
   </section>
 
