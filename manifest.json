@@ -8,12 +8,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "./assets/agashi.png",
+      "src": "./assets/logo.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./assets/agashi.png",
+      "src": "./assets/logo.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
