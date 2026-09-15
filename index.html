@@ -127,74 +127,93 @@
     </div>
   </header>
 
-  <!-- الأكثر طلباً (أولاً) -->
+  <!-- الأكثر طلباً (تمرير جانبي سلس يميناً ويساراً) -->
   <section id="bestsellers" class="py-14 px-4 max-w-6xl mx-auto">
-    <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+    <div class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
       <div>
         <h3 class="text-2xl lg:text-3xl font-extrabold text-brand-gold">الأكثر طلباً</h3>
-        <p class="text-stone-400 text-sm">أصنافنا المميزة التي نالت إعجاب عملائنا</p>
+        <p class="text-stone-400 text-sm">مرر لمشاهدة أشهى أطباقنا المختارة</p>
       </div>
-      <a href="#menu" class="border border-brand-gold text-brand-gold px-5 py-2 rounded-full text-xs font-bold hover:bg-brand-gold hover:text-black transition">
-        عرض جميع الأصناف &larr;
-      </a>
+      
+      <!-- أزرار التحكم بالتمرير للكمبيوتر وشاشات اللمس -->
+      <div class="flex items-center gap-3">
+        <button onclick="scrollSlider(-1)" aria-label="السابق" class="w-9 h-9 rounded-full border border-stone-700 bg-stone-900 hover:border-brand-gold hover:text-brand-gold text-stone-300 flex items-center justify-center transition shadow">
+          <i class="fa-solid fa-chevron-right text-sm"></i>
+        </button>
+        <button onclick="scrollSlider(1)" aria-label="التالي" class="w-9 h-9 rounded-full border border-stone-700 bg-stone-900 hover:border-brand-gold hover:text-brand-gold text-stone-300 flex items-center justify-center transition shadow">
+          <i class="fa-solid fa-chevron-left text-sm"></i>
+        </button>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-      <!-- كارت 1 -->
-      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
-        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="بامية باللحم">
-        <div class="p-4 text-center">
-          <h4 class="font-bold text-base text-white">بامية باللحم</h4>
-          <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
-          <button onclick="openOrderModal('بامية باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+    <!-- حاوية التمرير الأفقي للأطباق -->
+    <div id="mealsSlider" class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      
+      <!-- كارت 1: بامية باللحم -->
+      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="بامية باللحم">
+        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-base text-white">بامية باللحم</h4>
+            <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
+          </div>
+          <button onclick="openOrderModal('بامية باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 2 -->
-      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
-        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="دجاج مشوي">
-        <div class="p-4 text-center">
-          <h4 class="font-bold text-base text-white">دجاج مشوي</h4>
-          <span class="block font-black text-brand-gold text-lg my-1">250 جنيه</span>
-          <button onclick="openOrderModal('دجاج مشوي', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+      <!-- كارت 2: دجاج مشوي -->
+      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="دجاج مشوي">
+        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-base text-white">دجاج مشوي</h4>
+            <span class="block font-black text-brand-gold text-lg my-1">250 جنيه</span>
+          </div>
+          <button onclick="openOrderModal('دجاج مشوي', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 3 -->
-      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="ملاح لحم">
-        <div class="p-4 text-center">
-          <h4 class="font-bold text-base text-white">ملاح لحم</h4>
-          <span class="block font-black text-brand-gold text-lg my-1">300 جنيه</span>
-          <button onclick="openOrderModal('ملاح لحم', 300, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+      <!-- كارت 3: ملاح لحم -->
+      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="ملاح لحم">
+        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-base text-white">ملاح لحم</h4>
+            <span class="block font-black text-brand-gold text-lg my-1">300 جنيه</span>
+          </div>
+          <button onclick="openOrderModal('ملاح لحم', 300, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 4 -->
-      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
-        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="كبسة سودانية">
-        <div class="p-4 text-center">
-          <h4 class="font-bold text-base text-white">كبسة سودانية</h4>
-          <span class="block font-black text-brand-gold text-lg my-1">260 جنيه</span>
-          <button onclick="openOrderModal('كبسة سودانية', 260, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+      <!-- كارت 4: كبسة سودانية -->
+      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="كبسة سودانية">
+        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-base text-white">كبسة سودانية</h4>
+            <span class="block font-black text-brand-gold text-lg my-1">260 جنيه</span>
+          </div>
+          <button onclick="openOrderModal('كبسة سودانية', 260, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- كارت 5 -->
-      <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between">
-        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-36 w-full object-cover" alt="ويكة باللحم">
-        <div class="p-4 text-center">
-          <h4 class="font-bold text-base text-white">ويكة باللحم</h4>
-          <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
-          <button onclick="openOrderModal('ويكة باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+      <!-- كارت 5: ويكة باللحم -->
+      <div class="w-[240px] sm:w-[260px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=400&q=80" class="h-40 w-full object-cover" alt="ويكة باللحم">
+        <div class="p-4 text-center flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-base text-white">ويكة باللحم</h4>
+            <span class="block font-black text-brand-gold text-lg my-1">280 جنيه</span>
+          </div>
+          <button onclick="openOrderModal('ويكة باللحم', 280, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
@@ -385,7 +404,7 @@
     </div>
   </footer>
 
-  <!-- النافذة المنبثقة لإلزام العميل بالبيانات قبل الواتساب (Order Modal) -->
+  <!-- النافذة المنبثقة للطلب (مع عداد الكميات والإضافات وحساب الإجمالي) -->
   <div id="orderModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-[#15100a] border border-stone-700 w-full max-w-lg rounded-3xl p-5 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto custom-scroll">
       
@@ -399,16 +418,70 @@
           <i class="fa-solid fa-receipt"></i>
           <span>استكمال بيانات الطلب</span>
         </h3>
-        <p class="text-xs text-stone-400 mt-1">يرجى ملء البيانات التالية لتأكيد تجهيز طلبك بدقة</p>
+        <p class="text-xs text-stone-400 mt-1">حدد الكمية والإضافات المفضلة وبيانات التوصيل</p>
       </div>
 
-      <!-- ملخص الصنف المختار -->
+      <!-- ملخص الصنف المختار والسعر الإجمالي الفوري -->
       <div class="bg-stone-900/90 border border-brand-gold/30 rounded-2xl p-3.5 mb-4 text-right flex justify-between items-center">
         <div>
           <span class="text-[11px] text-stone-400 block">الطلب المختار:</span>
           <span id="modalItemTitle" class="text-sm font-black text-white"></span>
         </div>
-        <span id="modalItemPrice" class="text-brand-gold font-extrabold text-sm"></span>
+        <div class="text-left">
+          <span class="text-[11px] text-stone-400 block">الإجمالي التقريبي:</span>
+          <span id="modalItemPrice" class="text-brand-gold font-extrabold text-sm"></span>
+        </div>
+      </div>
+
+      <!-- عداد تحديد الكمية (الوجبات) -->
+      <div class="flex items-center justify-between bg-stone-900 border border-stone-800 p-3 rounded-2xl mb-4">
+        <div>
+          <span class="text-xs font-bold text-stone-200 block">عدد الوجبات:</span>
+          <span class="text-[10px] text-stone-400">كم طبقاً ترغب في طلبه؟</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="button" onclick="updateQuantity(-1)" class="w-8 h-8 rounded-xl bg-stone-800 hover:bg-stone-700 text-brand-gold font-black flex items-center justify-center transition active:scale-95 text-base">-</button>
+          <span id="orderQtyDisplay" class="font-black text-base text-white w-6 text-center">1</span>
+          <button type="button" onclick="updateQuantity(1)" class="w-8 h-8 rounded-xl bg-stone-800 hover:bg-stone-700 text-brand-gold font-black flex items-center justify-center transition active:scale-95 text-base">+</button>
+        </div>
+      </div>
+
+      <!-- قسم الإضافات التكميلية الاختيارية -->
+      <div class="bg-stone-900/60 border border-stone-800 p-3.5 rounded-2xl mb-4 text-right">
+        <span class="block text-xs font-bold text-brand-gold mb-2.5 flex items-center gap-1.5">
+          <i class="fa-solid fa-bowl-rice"></i>
+          تحب تضيف مع وجبتك؟ (اختياري)
+        </span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <label class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold/50 transition">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" class="addon-checkbox accent-brand-gold w-4 h-4" data-name="سلطة روب بالخيار" data-price="25" onchange="calculateOrderTotal()">
+              <span class="text-stone-300">سلطة روب بالخيار</span>
+            </div>
+            <span class="text-brand-gold font-bold">+25 ج</span>
+          </label>
+          <label class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold/50 transition">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" class="addon-checkbox accent-brand-gold w-4 h-4" data-name="شطة سودانية بالدكوة" data-price="15" onchange="calculateOrderTotal()">
+              <span class="text-stone-300">شطة بالدكوة حارة</span>
+            </div>
+            <span class="text-brand-gold font-bold">+15 ج</span>
+          </label>
+          <label class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold/50 transition">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" class="addon-checkbox accent-brand-gold w-4 h-4" data-name="بسبوسة بالمكسرات" data-price="35" onchange="calculateOrderTotal()">
+              <span class="text-stone-300">بسبوسة مكسرات</span>
+            </div>
+            <span class="text-brand-gold font-bold">+35 ج</span>
+          </label>
+          <label class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold/50 transition">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" class="addon-checkbox accent-brand-gold w-4 h-4" data-name="مشروب غازي بارد" data-price="25" onchange="calculateOrderTotal()">
+              <span class="text-stone-300">مشروب غازي بارد</span>
+            </div>
+            <span class="text-brand-gold font-bold">+25 ج</span>
+          </label>
+        </div>
       </div>
 
       <!-- نموذج البيانات الإلزامي -->
@@ -477,7 +550,7 @@
           </div>
         </div>
 
-        <!-- شرط خاص بالعزومات (يظهر ويلزم العميل فقط عند اختيار العزومات) -->
+        <!-- شرط خاص بالعزومات -->
         <div id="cateringNoticeBox" class="hidden bg-amber-950/60 border-2 border-amber-500/80 p-3.5 rounded-2xl space-y-2">
           <div class="flex items-start gap-2">
             <i class="fa-solid fa-triangle-exclamation text-brand-gold text-base mt-0.5"></i>
@@ -501,24 +574,40 @@
     </div>
   </div>
 
-  <!-- منطق إدارة الطلب والتحقق والتوجيه للواتساب -->
+  <!-- منطق التمرير والطلب والحساب التلقائي -->
   <script>
-    // ضع رقم واتساب المطعم هنا (مع كود الدولة وبدون إشارة +)
+    // رقم واتساب المطعم
     const WHATSAPP_PHONE = "201005825888";
+
+    // التحكم في التمرير يميناً ويساراً للأطباق
+    function scrollSlider(direction) {
+      const slider = document.getElementById('mealsSlider');
+      const scrollAmount = 280;
+      slider.scrollBy({
+        left: direction * -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
 
     let currentOrder = {
       title: "",
-      price: 0,
-      isCatering: false
+      unitPrice: 0,
+      quantity: 1,
+      isCatering: false,
+      total: 0
     };
 
     function openOrderModal(title, price = 0, isCatering = false) {
       currentOrder.title = title;
-      currentOrder.price = price;
+      currentOrder.unitPrice = price;
+      currentOrder.quantity = 1;
       currentOrder.isCatering = isCatering || title.includes("عزوم") || title.includes("العزومات");
 
+      // إعادة ضبط العداد والإضافات
+      document.getElementById('orderQtyDisplay').textContent = currentOrder.quantity;
+      document.querySelectorAll('.addon-checkbox').forEach(cb => cb.checked = false);
+
       document.getElementById('modalItemTitle').textContent = currentOrder.title;
-      document.getElementById('modalItemPrice').textContent = currentOrder.price > 0 ? `${currentOrder.price} جنيه` : 'حسب الاختيار';
 
       const cateringBox = document.getElementById('cateringNoticeBox');
       const depositCheck = document.getElementById('depositAgreement');
@@ -531,6 +620,8 @@
         depositCheck.checked = false;
       }
 
+      calculateOrderTotal();
+
       document.getElementById('orderModal').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
@@ -538,6 +629,32 @@
     function closeOrderModal() {
       document.getElementById('orderModal').classList.add('hidden');
       document.body.style.overflow = 'auto';
+    }
+
+    function updateQuantity(change) {
+      const newQty = currentOrder.quantity + change;
+      if (newQty >= 1) {
+        currentOrder.quantity = newQty;
+        document.getElementById('orderQtyDisplay').textContent = currentOrder.quantity;
+        calculateOrderTotal();
+      }
+    }
+
+    function calculateOrderTotal() {
+      if (currentOrder.unitPrice === 0) {
+        document.getElementById('modalItemPrice').textContent = 'حسب الاختيار';
+        currentOrder.total = 0;
+        return;
+      }
+
+      let addonsSum = 0;
+      document.querySelectorAll('.addon-checkbox:checked').forEach(cb => {
+        addonsSum += parseFloat(cb.dataset.price || 0);
+      });
+
+      // السعر الإجمالي = (سعر الوجبة × الكمية) + مجموع الإضافات
+      currentOrder.total = (currentOrder.unitPrice * currentOrder.quantity) + addonsSum;
+      document.getElementById('modalItemPrice').textContent = `${currentOrder.total} جنيه`;
     }
 
     function toggleTimingInput(show) {
@@ -582,14 +699,26 @@
         return;
       }
 
+      // تجميع الإضافات المختارة
+      const selectedAddons = [];
+      document.querySelectorAll('.addon-checkbox:checked').forEach(cb => {
+        selectedAddons.push(`${cb.dataset.name} (+${cb.dataset.price} ج)`);
+      });
+
       const timingFinal = timingType === 'لاحقاً' ? `لاحقاً (${customTime})` : 'الآن (بأسرع وقت)';
-      const priceText = currentOrder.price > 0 ? `${currentOrder.price} جنيه` : 'يحدد مع الإدارة';
+      const totalText = currentOrder.total > 0 ? `${currentOrder.total} جنيه` : 'يحدد مع الإدارة';
 
       let msg = `مرحباً "ملح وملاح" 👋\n`;
       msg += `أود تأكيد طلب جديد من خلال المنيو:\n\n`;
       msg += `🍽️ *تفاصيل الطلب:*\n`;
-      msg += `• الصنف: *${currentOrder.title}*\n`;
-      msg += `• القيمة: *${priceText}*\n\n`;
+      msg += `• الوجبة: *${currentOrder.title}*\n`;
+      msg += `• الكمية: *${currentOrder.quantity} وجبة*\n`;
+      
+      if (selectedAddons.length > 0) {
+        msg += `• الإضافات: *${selectedAddons.join(' + ')}*\n`;
+      }
+      
+      msg += `💰 *الإجمالي النهائي:* *${totalText}*\n\n`;
       msg += `👤 *بيانات العميل والتوصيل:*\n`;
       msg += `• الاسم: *${name}*\n`;
       msg += `• منطقة التوصيل: *${area}*\n`;
@@ -607,7 +736,7 @@
       window.open(whatsappUrl, '_blank');
     }
 
-    // إغلاق النافذة عند النقر خارج المحتوى
+    // إغلاق النافذة عند النقر في الخلفية
     window.onclick = function(event) {
       const modal = document.getElementById('orderModal');
       if (event.target === modal) {
