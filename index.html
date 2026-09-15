@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ملح وملاح | أكل سوداني أصيل بطعم البيت</title>
   
+  <!-- إعدادات تطبيق الويب PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0e0b07">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="./assets/agashi.png">
+
   <!-- خط Cairo من Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +55,24 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yg3kxy913q");
   </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1430476152325390');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1430476152325390&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-[#0e0b07] text-white font-cairo selection:bg-brand-gold selection:text-black">
 
@@ -72,11 +97,19 @@
       <a href="#contact" class="text-stone-300 hover:text-brand-gold transition">تواصل معنا</a>
     </div>
 
-    <!-- زر واتساب الرئيسي -->
-    <button onclick="openOrderModal('طلب عام من المنيو', 0, false)" class="bg-brand-green hover:bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
-      <i class="fa-brands fa-whatsapp text-lg"></i>
-      <span>اطلب الآن عبر واتساب</span>
-    </button>
+    <div class="flex items-center gap-2">
+      <!-- زر تثبيت المنيو كتطبيق -->
+      <button id="installAppBtn" onclick="installPWA()" class="hidden border border-brand-gold/60 text-brand-gold hover:bg-brand-gold hover:text-black px-3 py-1.5 rounded-full font-bold text-xs flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <span>تثبيت التطبيق</span>
+      </button>
+
+      <!-- زر واتساب الرئيسي -->
+      <button onclick="openOrderModal('طلب عام من المنيو', 0, false)" class="bg-brand-green hover:bg-emerald-600 text-white px-3.5 sm:px-4 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+        <span>اطلب عبر واتساب</span>
+      </button>
+    </div>
   </nav>
 
   <!-- القسم الترحيبي Hero -->
@@ -130,7 +163,7 @@
   <!-- الأكثر طلباً -->
   <section id="bestsellers" class="py-14 px-4 max-w-6xl mx-auto">
     
-    <!-- لافتة التوصيل المجاني الذكية -->
+    <!-- لافتة التوصيل المجاني -->
     <div class="mb-8 bg-gradient-to-r from-amber-950/70 via-stone-900 to-amber-950/70 border-2 border-brand-gold/60 rounded-3xl p-4 sm:p-5 text-center shadow-2xl relative overflow-hidden">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
         <div class="flex items-center gap-3.5 text-right">
@@ -170,7 +203,7 @@
       </div>
     </div>
 
-    <!-- حاوية التمرير الأفقي للأطباق (سعر 250 ج.م) -->
+    <!-- حاوية التمرير الأفقي للأطباق (250 ج.م) -->
     <div id="mealsSlider" class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
       
       <!-- 1. أقاشي سوداني -->
@@ -265,7 +298,7 @@
       </div>
 
       <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
-        <!-- العزومات مع تفعيل خاصية العربون الإلزامي -->
+        <!-- العزومات -->
         <div onclick="openOrderModal('طلب من تصنيف: العزومات الكبيرة', 0, true)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
           <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
           <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
@@ -314,7 +347,6 @@
   <!-- بنرات العروض الترويجية -->
   <section id="offers" class="py-6 px-4 max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <!-- بنر 1 -->
       <div class="bg-red-950/70 border border-red-900/60 p-6 rounded-3xl flex items-center justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-white">أول طلب؟</h4>
@@ -326,8 +358,7 @@
         <i class="fa-solid fa-motorcycle text-5xl text-red-400/70"></i>
       </div>
 
-      <!-- بنر 2 -->
-            <div class="bg-stone-900 border border-stone-800 p-6 rounded-3xl flex items-center justify-between">
+      <div class="bg-stone-900 border border-stone-800 p-6 rounded-3xl flex items-center justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-brand-gold">باقات عائلية</h4>
           <p class="text-sm text-stone-300 mt-1">مذاق يجمع العائلة</p>
@@ -338,7 +369,6 @@
         <i class="fa-solid fa-bowl-food text-5xl text-brand-gold/60"></i>
       </div>
 
-      <!-- بنر 3 (عزومات - يتطلب عربون) -->
       <div id="catering" class="bg-amber-950/50 border border-amber-900/50 p-6 rounded-3xl flex items-center justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-white">مناسبة قريبة؟</h4>
@@ -389,7 +419,7 @@
     </div>
   </section>
 
-  <!-- قسم الدعوة للإجراء وتواصل معنا -->
+  <!-- قسم تواصل معنا -->
   <section id="contact" class="py-12 px-4 text-center border-t border-stone-800">
     <div class="max-w-2xl mx-auto space-y-4">
       <h3 class="text-3xl font-extrabold text-brand-gold">اطلب الآن</h3>
@@ -438,11 +468,10 @@
     </div>
   </footer>
 
-  <!-- النافذة المنبثقة للطلب (مع الحساب التلقائي للتوصيل) -->
+  <!-- النافذة المنبثقة للطلب -->
   <div id="orderModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-[#15100a] border border-stone-700 w-full max-w-lg rounded-3xl p-5 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto custom-scroll">
       
-      <!-- زر الإغلاق -->
       <button onclick="closeOrderModal()" class="absolute top-4 left-4 text-stone-400 hover:text-white bg-stone-800 w-8 h-8 rounded-full flex items-center justify-center transition">
         <i class="fa-solid fa-xmark text-lg"></i>
       </button>
@@ -602,7 +631,7 @@
           </label>
         </div>
 
-        <!-- زر الإرسال لواتساب -->
+        <!-- زر الإرسال -->
         <button type="submit" class="w-full bg-brand-green hover:bg-emerald-600 text-white font-black py-3 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
           <i class="fa-brands fa-whatsapp text-xl"></i>
           <span>إرسال الطلب عبر واتساب</span>
@@ -611,10 +640,49 @@
     </div>
   </div>
 
-  <!-- منطق التمرير والحساب الذكي للتوصيل -->
+  <!-- المنطق البرمجي: PWA + Meta Pixel Tracking + الواتساب -->
   <script>
     const WHATSAPP_PHONE = "201145295914";
     const DELIVERY_STANDARD_FEE = 75;
+
+    // تسجيل Service Worker لتفعيل PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+
+    // منطق زر تثبيت التطبيق
+    let deferredPrompt;
+    const installBtn = document.getElementById('installAppBtn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (installBtn) installBtn.classList.remove('hidden');
+    });
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    if (isIOS && !isStandalone && installBtn) {
+      installBtn.classList.remove('hidden');
+    }
+
+    function installPWA() {
+      if (isIOS) {
+        alert("لتثبيت المنيو على جهازك:\n1. اضغط على زر المشاركة أسفل المتصفح\n2. اختر (إضافة إلى الشاشة الرئيسية Add to Home Screen)");
+      } else if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choice) => {
+          if (choice.outcome === 'accepted' && installBtn) {
+            installBtn.classList.add('hidden');
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        alert("التطبيق مثبت بالفعل أو يمكنك إضافته من قائمة المتصفح (الثلاث نقاط) -> تثبيت التطبيق.");
+      }
+    }
 
     function scrollSlider(direction) {
       const slider = document.getElementById('mealsSlider');
@@ -682,7 +750,7 @@
         document.getElementById('modalMealsSubtotal').textContent = 'حسب الاختيار';
         document.getElementById('modalDeliveryFee').textContent = '75 ج (أو مجاني لوجبتين+)';
         document.getElementById('modalItemPrice').textContent = 'يحدد مع الإدارة';
-                hintText.textContent = 'توصيل مجاني عند طلب وجبتين فأكثر!';
+        hintText.textContent = 'توصيل مجاني عند طلب وجبتين فأكثر!';
         currentOrder.total = 0;
         return;
       }
@@ -748,6 +816,15 @@
         alert("تنبيه: حجز العزومات يتطلب الموافقة على سداد العربون لتأكيد الطلب.");
         depositAgreement.focus();
         return;
+      }
+
+      // إرسال حدث التحويل (Lead) إلى Meta Pixel
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: currentOrder.title,
+          currency: 'EGP',
+          value: currentOrder.total
+        });
       }
 
       const selectedAddons = [];
