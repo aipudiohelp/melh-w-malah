@@ -1,0 +1,22 @@
+{
+  "name": "ملح وملاح | أكل سوداني أصيل",
+  "short_name": "ملح وملاح",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0b07",
+  "theme_color": "#0e0b07",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/agashi.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/agashi.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
