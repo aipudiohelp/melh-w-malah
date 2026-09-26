@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ملح وملاح | أكل سوداني أصيل بطعم البيت</title>
+  <link rel="icon" type="image/jpeg" href="./assets/logo.jpg">
   
   <!-- إعدادات تطبيق الويب PWA -->
   <link rel="manifest" href="./manifest.json">
@@ -78,32 +79,30 @@
 
   <!-- شريط التنقل العلوي Navbar -->
   <nav class="sticky top-0 z-40 bg-[#0e0b07]/90 backdrop-blur-md border-b border-stone-800 px-4 lg:px-12 py-3 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-      <img src="./assets/logo.jpg" alt="ملح وملاح" class="w-12 h-12 rounded-full border-2 border-brand-gold object-cover shadow-md shadow-brand-gold/10">
+    <div class="flex items-center gap-3">
+      <img src="./assets/logo.jpg" alt="ملح وملاح" class="w-11 h-11 rounded-full border-2 border-brand-gold object-cover shadow-md shadow-brand-gold/10">
       <div>
         <span class="text-xs text-stone-400 font-bold tracking-wider block">MELH W MALAH</span>
+        <span class="text-[10px] text-brand-gold font-bold">مطبخ سوداني أصيل</span>
       </div>
     </div>
 
-    </div>
-
-    <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
       <a href="#hero" class="text-brand-gold border-b-2 border-brand-gold pb-1">الرئيسية</a>
-      <a href="#bestsellers" class="text-stone-300 hover:text-brand-gold transition">الأكثر طلباً</a>
-      <a href="#menu" class="text-stone-300 hover:text-brand-gold transition">المنيو</a>
-      <a href="#offers" class="text-stone-300 hover:text-brand-gold transition">العروض</a>
-      <a href="#reviews" class="text-stone-300 hover:text-brand-gold transition">آراء العملاء</a>
+      <a href="#meat" class="text-stone-300 hover:text-brand-gold transition">اللحوم</a>
+      <a href="#stews" class="text-stone-300 hover:text-brand-gold transition">الأطباق والملاح</a>
+      <a href="#bakery" class="text-stone-300 hover:text-brand-gold transition">المخبوزات</a>
+      <a href="#salads" class="text-stone-300 hover:text-brand-gold transition">السلطات</a>
+      <a href="#pasta-mahshi" class="text-stone-300 hover:text-brand-gold transition">المكرونة والمحاشي</a>
       <a href="#contact" class="text-stone-300 hover:text-brand-gold transition">تواصل معنا</a>
     </div>
 
     <div class="flex items-center gap-2">
-      <!-- زر تثبيت المنيو كتطبيق -->
       <button id="installAppBtn" onclick="installPWA()" class="hidden border border-brand-gold/60 text-brand-gold hover:bg-brand-gold hover:text-black px-3 py-1.5 rounded-full font-bold text-xs flex items-center gap-1.5 transition">
         <i class="fa-solid fa-mobile-screen-button"></i>
         <span>تثبيت التطبيق</span>
       </button>
 
-      <!-- زر واتساب الرئيسي -->
       <button onclick="openOrderModal('طلب عام من المنيو', 0, false)" class="bg-brand-green hover:bg-emerald-600 text-white px-3.5 sm:px-4 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
         <span>اطلب عبر واتساب</span>
@@ -111,8 +110,33 @@
     </div>
   </nav>
 
+  <!-- شريط تصنيفات المنيو السريع (Sticky Navigation) -->
+  <div class="sticky top-[58px] z-30 bg-[#120d09]/95 backdrop-blur-md border-b border-stone-800 py-2.5 px-4 overflow-x-auto whitespace-nowrap custom-scroll flex gap-2 justify-start sm:justify-center">
+    <a href="#meat" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-drumstick-bite text-brand-gold"></i> اللحوم والشواوي
+    </a>
+    <a href="#stews" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-bowl-food text-brand-gold"></i> الأطباق والملاح
+    </a>
+    <a href="#bakery" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-cookie-bite text-brand-gold"></i> المخبوزات
+    </a>
+    <a href="#pastries" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-pizza-slice text-brand-gold"></i> المعجنات
+    </a>
+    <a href="#salads" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-leaf text-brand-gold"></i> السلطات
+    </a>
+    <a href="#pasta-mahshi" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-utensils text-brand-gold"></i> مكرونة ومحاشي
+    </a>
+    <a href="#catering-sides" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
+      <i class="fa-solid fa-fire text-brand-gold"></i> بوفيه وأصناف أخرى
+    </a>
+  </div>
+
   <!-- القسم الترحيبي Hero -->
-  <header id="hero" class="relative hero-gradient pt-14 pb-20 px-4 text-center">
+  <header id="hero" class="relative hero-gradient pt-10 pb-16 px-4 text-center">
     <div class="max-w-4xl mx-auto space-y-4">
       <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-brand-gold text-xs font-bold shadow-inner">
         <span>من السودان إلى مائدتكم</span>
@@ -120,38 +144,38 @@
         <span>الطعم يجمعنا</span>
       </div>
 
-      <h1 class="text-5xl lg:text-7xl font-black text-brand-gold tracking-tight drop-shadow-md">
+      <h1 class="text-4xl lg:text-6xl font-black text-brand-gold tracking-tight drop-shadow-md">
         ملح وملاح
       </h1>
-      <h2 class="text-2xl lg:text-3xl font-bold text-stone-100">
+      <h2 class="text-xl lg:text-2xl font-bold text-stone-100">
         أكل سوداني أصيل بطعم البيت
       </h2>
-      <p class="text-stone-300 text-base lg:text-lg">
-        تذوّق النكهة السودانية بكل حب
-      </p>
 
-      <!-- المميزات الأربعة -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-8 max-w-3xl mx-auto">
-        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
-          <i class="fa-solid fa-seedling text-brand-gold text-2xl mb-2"></i>
-          <span class="text-xs font-bold text-stone-200">مكونات طازجة وعالية الجودة</span>
-        </div>
-        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
-          <i class="fa-solid fa-kitchen-set text-brand-gold text-2xl mb-2"></i>
-          <span class="text-xs font-bold text-stone-200">أطباق منزلية بطعم أصيل</span>
-        </div>
-        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
-          <i class="fa-solid fa-motorcycle text-brand-gold text-2xl mb-2"></i>
-          <span class="text-xs font-bold text-stone-200">توصيل سريع وآمن</span>
-        </div>
-        <div class="bg-stone-900/80 border border-stone-800 p-4 rounded-2xl flex flex-col items-center text-center">
-          <i class="fa-solid fa-heart text-brand-gold text-2xl mb-2"></i>
-          <span class="text-xs font-bold text-stone-200">ثقة وآراء عملاء حقيقية</span>
+      <!-- لافتة التوصيل المجاني -->
+      <div class="mt-6 bg-gradient-to-r from-amber-950/70 via-stone-900 to-amber-950/70 border-2 border-brand-gold/60 rounded-3xl p-4 sm:p-5 text-center shadow-2xl relative overflow-hidden max-w-3xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5 text-right">
+            <div class="w-11 h-11 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-truck-fast text-brand-gold text-xl"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="bg-emerald-600 text-white font-black text-[10px] px-2.5 py-0.5 rounded-full">عرض موفر</span>
+                <h4 class="font-black text-sm sm:text-base text-white">توصيل مجاني 100% عند طلب وجبتين أو أكثر!</h4>
+              </div>
+              <p class="text-xs text-stone-300 mt-0.5">
+                توصيل الوجبة الفردية <span class="text-brand-gold font-bold">75 ج.م</span> .. اطلب وجبتين واستفد بالتوصيل المجاني لكافة المناطق المحددة.
+              </p>
+            </div>
+          </div>
+          <a href="#meat" class="flex-shrink-0 bg-brand-gold hover:bg-amber-500 text-black font-black text-xs px-5 py-2.5 rounded-full transition transform hover:scale-105 shadow-md">
+            تصفح القائمة &darr;
+          </a>
         </div>
       </div>
 
       <!-- مناطق التوصيل -->
-      <div class="mt-6 inline-flex items-center gap-2 bg-stone-900/95 border border-stone-700/60 px-5 py-2 rounded-full text-xs text-stone-300 shadow-md">
+      <div class="mt-4 inline-flex items-center gap-2 bg-stone-900/95 border border-stone-700/60 px-5 py-2 rounded-full text-xs text-stone-300 shadow-md">
         <i class="fa-solid fa-location-dot text-brand-gold"></i>
         <span class="font-bold text-brand-gold">مناطق التوصيل:</span>
         <span>المعادي | المقطم | مدينة نصر | فيصل | المهندسين</span>
@@ -159,230 +183,1005 @@
     </div>
   </header>
 
-  <!-- الأكثر طلباً -->
-  <section id="bestsellers" class="py-14 px-4 max-w-6xl mx-auto">
-    
-    <!-- لافتة التوصيل المجاني -->
-    <div class="mb-8 bg-gradient-to-r from-amber-950/70 via-stone-900 to-amber-950/70 border-2 border-brand-gold/60 rounded-3xl p-4 sm:p-5 text-center shadow-2xl relative overflow-hidden">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
-        <div class="flex items-center gap-3.5 text-right">
-          <div class="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-truck-fast text-brand-gold text-2xl"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="bg-emerald-600 text-white font-black text-[10px] px-2.5 py-0.5 rounded-full">عرض اليوم الموفر</span>
-              <h4 class="font-black text-sm sm:text-base text-white">توصيل مجاني 100% عند طلب وجبتين أو أكثر!</h4>
-            </div>
-            <p class="text-xs text-stone-300 mt-0.5">
-              التوصيل لوجبة واحدة <span class="text-brand-gold font-bold">75 ج.م</span> .. اطلب وجبتين ووفر التوصيل بالكامل لجميع المناطق المحددة.
-            </p>
-          </div>
-        </div>
-        <a href="#mealsSlider" class="flex-shrink-0 bg-brand-gold hover:bg-amber-500 text-black font-black text-xs px-5 py-2.5 rounded-full transition transform hover:scale-105 shadow-md">
-          اختر وجباتك الآن &darr;
-        </a>
-      </div>
-    </div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
+  <!-- 1. قسم اللحوم والشواوي -->
+  <section id="meat" class="py-10 px-4 max-w-6xl mx-auto">
+    <div class="flex items-center justify-between mb-4">
       <div>
-        <h3 class="text-2xl lg:text-3xl font-extrabold text-brand-gold">الأكثر طلباً</h3>
-        <p class="text-stone-400 text-sm">مرر لمشاهدة أشهى أطباقنا المختارة</p>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-drumstick-bite text-xl"></i>
+          <span>اللحوم والشواوي</span>
+        </h3>
+        <p class="text-stone-400 text-xs">أجود أنواع اللحوم الطازجة والمتبلة بالطريقة السودانية</p>
       </div>
-      
-      <!-- أزرار التحكم بالتمرير -->
-      <div class="flex items-center gap-3">
-        <button onclick="scrollSlider(-1)" aria-label="السابق" class="w-9 h-9 rounded-full border border-stone-700 bg-stone-900 hover:border-brand-gold hover:text-brand-gold text-stone-300 flex items-center justify-center transition shadow">
-          <i class="fa-solid fa-chevron-right text-sm"></i>
-        </button>
-        <button onclick="scrollSlider(1)" aria-label="التالي" class="w-9 h-9 rounded-full border border-stone-700 bg-stone-900 hover:border-brand-gold hover:text-brand-gold text-stone-300 flex items-center justify-center transition shadow">
-          <i class="fa-solid fa-chevron-left text-sm"></i>
-        </button>
-      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
     </div>
 
-    <!-- حاوية التمرير الأفقي للأطباق (250 ج.م) -->
-    <div id="mealsSlider" class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      
-      <!-- 1. أقاشي سوداني -->
-      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
-        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
-          🔥 الأكثر طلباً
-        </span>
-        <img src="./assets/agashi.png" class="h-44 w-full object-cover" alt="أقاشي سوداني">
-        <div class="p-4 text-right flex-grow flex flex-col justify-between">
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- امفتقت -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/amfitqat.webp" loading="lazy" class="h-36 w-full object-cover" alt="امفتقت">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
           <div>
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-extrabold text-base text-white">أقاشي سوداني</h4>
-              <span class="font-black text-brand-gold text-base">250 ج.م</span>
-            </div>
-            <p class="text-[11px] text-stone-400 leading-snug">لحم متبل ببهارات الكولاي الأصلية، يُقدم مع شرائح البصل والليمون والشطة الحارة.</p>
+            <h4 class="font-bold text-sm text-white truncate">امفتقت</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
           </div>
-          <button onclick="openOrderModal('أقاشي سوداني', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
+          <button onclick="openOrderModal('امفتقت', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- 2. كمونية سودانية -->
-      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
-        <span class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
-          ⭐ نكهة أصيلة
-        </span>
-        <img src="./assets/kamonia.png" class="h-44 w-full object-cover" alt="كمونية سودانية">
-        <div class="p-4 text-right flex-grow flex flex-col justify-between">
+      <!-- بفتيك -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/boftek.webp" loading="lazy" class="h-36 w-full object-cover" alt="بفتيك">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
           <div>
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-extrabold text-base text-white">كمونية سودانية</h4>
-              <span class="font-black text-brand-gold text-base">250 ج.م</span>
-            </div>
-            <p class="text-[11px] text-stone-400 leading-snug">مزيج شهي من الكرشة واللحم المطهو في صلصة الطماطم المسبكة مع الزيتون والبهارات.</p>
+            <h4 class="font-bold text-sm text-white truncate">بفتيك</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
           </div>
-          <button onclick="openOrderModal('كمونية سودانية', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
+          <button onclick="openOrderModal('بفتيك', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- 3. بامية مفروكة -->
-      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
-        <span class="absolute top-3 right-3 bg-emerald-700 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
-          🌿 طعم بيتي
-        </span>
-        <img src="./assets/bamya-mafrooka.png" class="h-44 w-full object-cover" alt="بامية مفروكة">
-        <div class="p-4 text-right flex-grow flex flex-col justify-between">
+      <!-- بانية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/pane.webp" loading="lazy" class="h-36 w-full object-cover" alt="بانية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
           <div>
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-extrabold text-base text-white">بامية مفروكة</h4>
-              <span class="font-black text-brand-gold text-base">250 ج.م</span>
-            </div>
-            <p class="text-[11px] text-stone-400 leading-snug">بامية ناعمة ومفروكة بعناية على الطريقة السودانية الأصيلة بمكونات طازجة وغنية.</p>
+            <h4 class="font-bold text-sm text-white truncate">بانية</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
           </div>
-          <button onclick="openOrderModal('بامية مفروكة', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
+          <button onclick="openOrderModal('بانية', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
-      <!-- 4. طبيخ بامية باللحم -->
-      <div class="w-[260px] sm:w-[280px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-xl relative">
-        <span class="absolute top-3 right-3 bg-brand-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full shadow-md z-10">
-          🥩 لحم طازج
-        </span>
-        <img src="./assets/bamya-lahm.png" class="h-44 w-full object-cover" alt="طبيخ بامية باللحم">
-        <div class="p-4 text-right flex-grow flex flex-col justify-between">
+      <!-- كبدة (نصف كيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/kebda.webp" loading="lazy" class="h-36 w-full object-cover" alt="كبدة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
           <div>
-            <div class="flex justify-between items-center mb-1">
-              <h4 class="font-extrabold text-base text-white">بامية باللحم</h4>
-              <span class="font-black text-brand-gold text-base">250 ج.م</span>
-            </div>
-            <p class="text-[11px] text-stone-400 leading-snug">قطع لحم بلدي طري مطبوخ مع قرون البامية في صلصة الطماطم الغنية بالبهارات السودانية.</p>
+            <h4 class="font-bold text-sm text-white truncate">كبدة (نصف كيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">300 ج.م</span>
           </div>
-          <button onclick="openOrderModal('بامية باللحم', 250, false)" class="w-full mt-3 bg-brand-green hover:bg-emerald-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow-lg">
+          <button onclick="openOrderModal('كبدة (نصف كيلو)', 300, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
             <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
       </div>
 
+      <!-- دمعة لحم (نصف كيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/damat-lahm.webp" loading="lazy" class="h-36 w-full object-cover" alt="دمعة لحم">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">دمعة لحم (نصف كيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('دمعة لحم (نصف كيلو)', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- ضلع ضأن -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/dila-daan.webp" loading="lazy" class="h-36 w-full object-cover" alt="ضلع ضأن">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ضلع ضأن</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">700 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ضلع ضأن', 700, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- ضلع عجال -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/dila-ajal.webp" loading="lazy" class="h-36 w-full object-cover" alt="ضلع عجال">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ضلع عجال</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">600 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ضلع عجال', 600, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كفتريتة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/kaftareeta.webp" loading="lazy" class="h-36 w-full object-cover" alt="كفتريتة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كفتريتة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كفتريتة', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كباب (نصف كيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/kebab.webp" loading="lazy" class="h-36 w-full object-cover" alt="كباب">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كباب (نصف كيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كباب (نصف كيلو)', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كفتوتة (نصف كيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/kaftoota.webp" loading="lazy" class="h-36 w-full object-cover" alt="كفتوتة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كفتوتة (نصف كيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كفتوتة (نصف كيلو)', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- شية صالح (الكيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/shaya-saleh.webp" loading="lazy" class="h-36 w-full object-cover" alt="شية صالح">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">شية صالح (الكيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">600 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('شية صالح (الكيلو)', 600, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- شية جمر (الكيلو) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/shaya-gamr.webp" loading="lazy" class="h-36 w-full object-cover" alt="شية جمر">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">شية جمر (الكيلو)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">650 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('شية جمر (الكيلو)', 650, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- أقاشي فراخ -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/agashi-chicken.webp" loading="lazy" class="h-36 w-full object-cover" alt="أقاشي فراخ">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">أقاشي فراخ</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('أقاشي فراخ', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- أقاشي لحمة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/meat/agashi-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="أقاشي لحمة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">أقاشي لحمة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">350 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('أقاشي لحمة', 350, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- تصفح المنيو -->
-  <section id="menu" class="py-12 bg-white text-stone-900 rounded-3xl mx-4 lg:mx-auto max-w-6xl shadow-2xl mb-12">
-    <div class="px-4">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl lg:text-3xl font-black">تصفح المنيو</h3>
-        <p class="text-stone-500 text-sm mt-1">اختر ما يناسبك من أصنافنا المتنوعة</p>
+  <!-- 2. قسم الأطباق والملاح السوداني -->
+  <section id="stews" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-bowl-food text-xl"></i>
+          <span>الأطباق والملاح السوداني</span>
+        </h3>
+        <p class="text-stone-400 text-xs">طعم البيت السوداني الأصيل المسبك على أصوله</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- ملاح نعيمة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/naeema.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح نعيمة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ملاح نعيمة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ملاح نعيمة', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
       </div>
 
-      <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll justify-start lg:justify-center">
-        <!-- العزومات -->
-        <div onclick="openOrderModal('طلب من تصنيف: العزومات الكبيرة', 0, true)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="العزومات">
-          <i class="fa-solid fa-bowl-food text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">العزومات الكبيرة</span>
+      <!-- ملاح تقلية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/teqliya.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح تقلية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ملاح تقلية</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ملاح تقلية', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: الباقات العائلية', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الباقات العائلية">
-          <i class="fa-solid fa-users text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الباقات العائلية</span>
+      <!-- ملاح روب أبيض -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/rob-abyad.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح روب أبيض">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ملاح روب أبيض</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ملاح روب أبيض', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: الأطباق الرئيسية', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الأطباق الرئيسية">
-          <i class="fa-solid fa-utensils text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الأطباق الرئيسية</span>
+      <!-- ملاح خضرة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/khodra.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح خضرة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ملاح خضرة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ملاح خضرة', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: المكرونة', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المكرونة">
-          <i class="fa-solid fa-bowl-rice text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">المكرونة</span>
+      <!-- طبيخ لوبيا -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/loubia.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ لوبيا">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">طبيخ لوبيا</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('طبيخ لوبيا', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: السلطات والإضافات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="السلطات">
-          <i class="fa-solid fa-leaf text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">السلطات والإضافات</span>
+      <!-- بامية طبيخ -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/bamya-tabeekh.webp" loading="lazy" class="h-36 w-full object-cover" alt="بامية طبيخ">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">بامية طبيخ</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">300 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('بامية طبيخ', 300, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: المخبوزات والمعجنات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="المخبوزات">
-          <i class="fa-solid fa-bread-slice text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">المخبوزات</span>
+      <!-- ملوخية طبيخ -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/molokhia.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملوخية طبيخ">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">ملوخية طبيخ</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">300 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('ملوخية طبيخ', 300, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
+      </div>
 
-        <div onclick="openOrderModal('طلب من تصنيف: الحلويات', 0, false)" class="min-w-[125px] flex-shrink-0 bg-stone-50 border border-stone-200 rounded-2xl p-3 text-center hover:shadow-md transition cursor-pointer hover:border-brand-gold">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=200&q=80" class="w-16 h-16 rounded-full mx-auto object-cover mb-2" alt="الحلويات">
-          <i class="fa-solid fa-cake-candles text-brand-darkGold text-sm"></i>
-          <span class="block text-xs font-bold mt-1">الحلويات</span>
+      <!-- طبيخ قرع -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/qara.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ قرع">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">طبيخ قرع</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('طبيخ قرع', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- طبيخ رجلة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/rigla.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ رجلة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">طبيخ رجلة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('طبيخ رجلة', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- طبيخ فاصوليا -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/stews/fasolia.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ فاصوليا">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">طبيخ فاصوليا</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">280 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('طبيخ فاصوليا', 280, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- بنرات العروض الترويجية -->
-  <section id="offers" class="py-6 px-4 max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div class="bg-red-950/70 border border-red-900/60 p-6 rounded-3xl flex items-center justify-between">
-        <div>
-          <h4 class="text-xl font-extrabold text-white">أول طلب؟</h4>
-          <p class="text-sm font-bold text-red-300 mt-1">التوصيل مجاناً</p>
-          <button onclick="openOrderModal('عرض أول طلب مجاني للتوصيل', 0, false)" class="mt-4 inline-block bg-white text-red-950 px-4 py-1.5 rounded-full text-xs font-black hover:bg-stone-200 transition">
-            الطلب الآن &larr;
+  <!-- 3. قسم المخبوزات والحلويات -->
+  <section id="bakery" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-cookie-bite text-xl"></i>
+          <span>المخبوزات والحلويات السودانية</span>
+        </h3>
+        <p class="text-stone-400 text-xs">كعك وبسكويت ومخبوزات شاي سودانية طازجة</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- بسكويت شاي -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/biscuit-tea.webp" loading="lazy" class="h-36 w-full object-cover" alt="بسكويت شاي">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">بسكويت شاي</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('بسكويت شاي', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
-        <i class="fa-solid fa-motorcycle text-5xl text-red-400/70"></i>
       </div>
 
-      <div class="bg-stone-900 border border-stone-800 p-6 rounded-3xl flex items-center justify-between">
-        <div>
-          <h4 class="text-xl font-extrabold text-brand-gold">باقات عائلية</h4>
-          <p class="text-sm text-stone-300 mt-1">مذاق يجمع العائلة</p>
-          <button onclick="openOrderModal('عرض الباقات العائلية', 0, false)" class="mt-4 inline-block bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs font-black hover:bg-emerald-800 transition">
-            عرض الباقات &larr;
+      <!-- كعك سادة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/kahk-sada.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك سادة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كعك سادة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">220 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كعك سادة', 220, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
-        <i class="fa-solid fa-bowl-food text-5xl text-brand-gold/60"></i>
       </div>
 
-      <div id="catering" class="bg-amber-950/50 border border-amber-900/50 p-6 rounded-3xl flex items-center justify-between">
-        <div>
-          <h4 class="text-xl font-extrabold text-white">مناسبة قريبة؟</h4>
-          <p class="text-sm text-amber-200 mt-1">دع تجهيز العزومة علينا</p>
-          <button onclick="openOrderModal('تجهيز عزومة ومناسبة خاصة', 0, true)" class="mt-4 inline-block bg-brand-gold text-black px-4 py-1.5 rounded-full text-xs font-black hover:bg-brand-darkGold transition">
-            جهّز عزومتي &larr;
+      <!-- كعك عجوة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/kahk-agwa.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك عجوة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كعك عجوة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كعك عجوة', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
           </button>
         </div>
-        <i class="fa-solid fa-utensils text-5xl text-amber-500/70"></i>
+      </div>
+
+      <!-- كعك جوز -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/kahk-gouz.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك جوز">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كعك جوز</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كعك جوز', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- غريبة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/ghorayeba.webp" loading="lazy" class="h-36 w-full object-cover" alt="غريبة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">غريبة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">220 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('غريبة', 220, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- جوزية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/gawziya.webp" loading="lazy" class="h-36 w-full object-cover" alt="جوزية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">جوزية</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('جوزية', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- بيتي فور -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/petit-four.webp" loading="lazy" class="h-36 w-full object-cover" alt="بيتي فور">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">بيتي فور</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('بيتي فور', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- منين -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/maneen.webp" loading="lazy" class="h-36 w-full object-cover" alt="منين">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">منين</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('منين', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- قرقوش -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/qorqoosh.webp" loading="lazy" class="h-36 w-full object-cover" alt="قرقوش">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">قرقوش</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('قرقوش', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- يانسون -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/yansoon.webp" loading="lazy" class="h-36 w-full object-cover" alt="يانسون">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">يانسون</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('يانسون', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- دراي كيك -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/dry-cake.webp" loading="lazy" class="h-36 w-full object-cover" alt="دراي كيك">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">دراي كيك</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('دراي كيك', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- لانكشير -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/bakery/lancashire.webp" loading="lazy" class="h-36 w-full object-cover" alt="لانكشير">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">لانكشير</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">240 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('لانكشير', 240, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. قسم المعجنات -->
+  <section id="pastries" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-pizza-slice text-xl"></i>
+          <span>المعجنات والفطائر</span>
+        </h3>
+        <p class="text-stone-400 text-xs">فطائر وكرواسون وبيتزا طازجة من الفرن</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- فطاير لحمة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pastries/fatayer-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="فطاير لحمة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">فطاير لحمة (للقطعة)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">7 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('فطاير لحمة (للقطعة)', 7, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- فطاير خضار -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pastries/fatayer-veg.webp" loading="lazy" class="h-36 w-full object-cover" alt="فطاير خضار">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">فطاير خضار (للقطعة)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">5 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('فطاير خضار (للقطعة)', 5, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- بيتزا -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pastries/pizza.webp" loading="lazy" class="h-36 w-full object-cover" alt="بيتزا">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">بيتزا طازجة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">حسب الحجم</span>
+          </div>
+          <button onclick="openOrderModal('طلب بيتزا طازجة', 0, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كرواسان -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pastries/croissant.webp" loading="lazy" class="h-36 w-full object-cover" alt="كرواسان">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كرواسان بالزبدة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">حسب الطلب</span>
+          </div>
+          <button onclick="openOrderModal('طلب كرواسان بالزبدة', 0, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. قسم السلطات والمقبلات -->
+  <section id="salads" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-leaf text-xl"></i>
+          <span>السلطات والمقبلات</span>
+        </h3>
+        <p class="text-stone-400 text-xs">سلطات ومتبلات سودانية تفتح النفس على الأكل</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- سلطة مش -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/mish.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة مش">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة مش</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة مش', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سلطة روب -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/rob.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة روب">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة روب</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">100 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة روب', 100, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سلطة بيضاء -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/salata-bayda.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة بيضاء">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة بيضاء</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة بيضاء', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سلطة هندية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/salata-hendiya.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة هندية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة هندية</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة هندية', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سلطة أسود محمرة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/aswad-mohamara.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة أسود محمرة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة أسود محمرة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">120 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة أسود محمرة', 120, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سلطة أسود مشوية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/salads/aswad-mashwiya.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة أسود مشوية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سلطة أسود مشوية</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">120 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سلطة أسود مشوية', 120, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. قسم المكرونة والمحاشي -->
+  <section id="pasta-mahshi" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-utensils text-xl"></i>
+          <span>المكرونة والمحاشي</span>
+        </h3>
+        <p class="text-stone-400 text-xs">صواني المكرونة الغنية والمحاشي البيتي المشكلة</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- مكرونة بشاميل -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pasta/bechamel.webp" loading="lazy" class="h-36 w-full object-cover" alt="مكرونة بشاميل">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">مكرونة بالبشاميل</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('مكرونة بالبشاميل', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- مكرونة نجرسكو -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/pasta/negresco.webp" loading="lazy" class="h-36 w-full object-cover" alt="مكرونة نجرسكو">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">مكرونة نجرسكو</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('مكرونة نجرسكو', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- محشي مشكل -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/mahshi/mahshi-moshakal.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي مشكل">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">محشي مشكل</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('محشي مشكل', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- محشي ورق عنب -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/mahshi/waraq-enab.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي ورق عنب">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">محشي ورق عنب</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('محشي ورق عنب', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- محشي كرنب -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/mahshi/kromb.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي كرنب">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">محشي كرنب</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('محشي كرنب', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. قسم كوكتيل الأفراح وأصناف أخرى -->
+  <section id="catering-sides" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
+          <i class="fa-solid fa-fire text-xl"></i>
+          <span>بوفيه الأفراح وأصناف أخرى</span>
+        </h3>
+        <p class="text-stone-400 text-xs">تجهيز مناسبات وأطباق سودانية تقليدية مميزة</p>
+      </div>
+      <span class="text-xs text-stone-500 hidden sm:block">مرر أفقياً لتصفح الأصناف &larr;</span>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
+      <!-- كوكتيل أفراح 3 أصناف -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
+        <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
+        <img src="./assets/catering/cocktail-3.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل 3 أصناف">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كوكتيل أفراح (3 أصناف)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كوكتيل أفراح (3 أصناف)', 200, true)" class="w-full mt-2 bg-brand-gold hover:bg-amber-500 text-black font-black py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-hand-holding-dollar"></i> حجز بوفيه
+          </button>
+        </div>
+      </div>
+
+      <!-- كوكتيل أفراح 2 صنف -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
+        <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
+        <img src="./assets/catering/cocktail-2.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل 2 صنف">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كوكتيل أفراح (2 صنف)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">170 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كوكتيل أفراح (2 صنف)', 170, true)" class="w-full mt-2 bg-brand-gold hover:bg-amber-500 text-black font-black py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-hand-holding-dollar"></i> حجز بوفيه
+          </button>
+        </div>
+      </div>
+
+      <!-- كوكتيل أفراح صنف واحد -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
+        <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
+        <img src="./assets/catering/cocktail-1.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل صنف واحد">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كوكتيل أفراح (صنف)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">130 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كوكتيل أفراح (صنف واحد)', 130, true)" class="w-full mt-2 bg-brand-gold hover:bg-amber-500 text-black font-black py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-hand-holding-dollar"></i> حجز بوفيه
+          </button>
+        </div>
+      </div>
+
+      <!-- زغني لحمة -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/zighni-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="زغني لحمة">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">زغني لحمة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">350 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('زغني لحمة', 350, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- زغني فراخ -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/zighni-chicken.webp" loading="lazy" class="h-36 w-full object-cover" alt="زغني فراخ">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">زغني فراخ</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">250 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('زغني فراخ', 250, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- سجق / سبخ -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/sejeq.webp" loading="lazy" class="h-36 w-full object-cover" alt="سجق">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">سجق سوداني</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('سجق سوداني', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- بوش سوداني -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/boush.webp" loading="lazy" class="h-36 w-full object-cover" alt="بوش سوداني">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">بوش سوداني</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('بوش سوداني', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- فتة عدس -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/fattet-adas.webp" loading="lazy" class="h-36 w-full object-cover" alt="فتة عدس">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">فتة عدس</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('فتة عدس', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- كسرة بالطماطم -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/kisra-tamtem.webp" loading="lazy" class="h-36 w-full object-cover" alt="كسرة بالطماطم">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">كسرة بالطماطم</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">150 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('كسرة بالطماطم', 150, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- طعمية (للقطعة) -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/tameya.webp" loading="lazy" class="h-36 w-full object-cover" alt="طعمية سودانية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">طعمية (للقطعة)</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">5 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('طعمية سودانية (للقطعة)', 5, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- شطة سودانية -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/shatta.webp" loading="lazy" class="h-36 w-full object-cover" alt="شطة سودانية">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">شطة سودانية بالدكوة</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">50 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('شطة سودانية بالدكوة', 50, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
+      </div>
+
+      <!-- مخلل -->
+      <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+        <img src="./assets/sides/mokhalal.webp" loading="lazy" class="h-36 w-full object-cover" alt="مخلل">
+        <div class="p-3 text-right flex-grow flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white truncate">مخلل بيتي</h4>
+            <span class="font-black text-brand-gold text-sm block my-1">200 ج.م</span>
+          </div>
+          <button onclick="openOrderModal('مخلل بيتي', 200, false)" class="w-full mt-2 bg-brand-green hover:bg-emerald-600 text-white font-bold py-1.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1 transition active:scale-95 shadow">
+            <i class="fa-solid fa-cart-plus"></i> أضف للطلب
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- آراء العملاء -->
-  <section id="reviews" class="py-14 px-4 bg-stone-950">
+  <section id="reviews" class="py-14 px-4 bg-stone-950 border-t border-stone-900">
     <div class="max-w-6xl mx-auto text-center">
       <h3 class="text-2xl lg:text-3xl font-extrabold text-white">ماذا يقول عملاؤنا؟</h3>
       <p class="text-stone-400 text-sm mt-1">تجارب حقيقية من قلب مطبخ ملح وملاح</p>
@@ -390,7 +1189,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
           <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
-          <p class="text-sm text-stone-200 leading-relaxed">"جودة عالية وتوصيل سريع، والأهم التعامل الراقي."</p>
+          <p class="text-sm text-stone-200 leading-relaxed">"جودة عالية وتوصيل سريع، والأهم التعامل الراقي والأكل السوداني النظيف."</p>
           <div class="flex text-amber-400 text-xs gap-1 my-3">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
@@ -399,7 +1198,7 @@
 
         <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
           <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
-          <p class="text-sm text-stone-200 leading-relaxed">"الطعم سوداني أصيل وكأنك في البيت، ما شاء الله تبارك الله."</p>
+          <p class="text-sm text-stone-200 leading-relaxed">"الطعم سوداني أصيل وكأنك في البيت، الأقاشي والملاح ما شاء الله تبارك الله."</p>
           <div class="flex text-amber-400 text-xs gap-1 my-3">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
@@ -408,7 +1207,7 @@
 
         <div class="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-right relative">
           <i class="fa-solid fa-quote-right text-brand-gold/40 text-xl absolute top-4 left-4"></i>
-          <p class="text-sm text-stone-200 leading-relaxed">"أكل نظيف وطعم ممتاز وخدمة راقية، أنصح الجميع بالتجربة."</p>
+          <p class="text-sm text-stone-200 leading-relaxed">"أكل نظيف وطعم ممتاز وخدمة راقية وتوصيل سريع، أنصح الجميع بالتجربة."</p>
           <div class="flex text-amber-400 text-xs gap-1 my-3">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
@@ -421,32 +1220,13 @@
   <!-- قسم تواصل معنا -->
   <section id="contact" class="py-12 px-4 text-center border-t border-stone-800">
     <div class="max-w-2xl mx-auto space-y-4">
-      <h3 class="text-3xl font-extrabold text-brand-gold">اطلب الآن</h3>
-      <p class="text-stone-300 text-sm">تواصل معنا عبر واتساب واستمتع بأفضل الأطباق السودانية</p>
+      <h3 class="text-3xl font-extrabold text-brand-gold">جاهز لطلبك؟</h3>
+      <p class="text-stone-300 text-sm">تواصل معنا عبر واتساب واستمتع بأطيب الأطباق السودانية في منزلك</p>
       
-      <button onclick="openOrderModal('طلب من تواصل معنا', 0, false)" class="inline-flex items-center gap-3 bg-brand-green hover:bg-emerald-600 text-white font-black px-8 py-3.5 rounded-full text-base shadow-xl transition transform hover:scale-105">
+      <button onclick="openOrderModal('طلب مباشر من الموقع', 0, false)" class="inline-flex items-center gap-3 bg-brand-green hover:bg-emerald-600 text-white font-black px-8 py-3.5 rounded-full text-base shadow-xl transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
-        <span>اطلب عبر واتساب</span>
+        <span>اطلب عبر واتساب الآن</span>
       </button>
-
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
-        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
-          <i class="fa-solid fa-location-dot text-brand-gold"></i>
-          في مناطق محددة
-        </div>
-        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
-          <i class="fa-solid fa-motorcycle text-brand-gold"></i>
-          توصيل سريع
-        </div>
-        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
-          <i class="fa-solid fa-leaf text-brand-gold"></i>
-          طعم أصيل
-        </div>
-        <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-stone-300">
-          <i class="fa-solid fa-shield-halved text-brand-gold"></i>
-          جودة مضمونة
-        </div>
-      </div>
     </div>
   </section>
 
@@ -459,15 +1239,13 @@
       </div>
 
       <div class="flex items-center gap-4 text-stone-400">
-        <span>تابعونا على:</span>
-        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="hover:text-brand-gold text-lg"><i class="fa-brands fa-facebook"></i></a>
+        <span>هاتف الحجز والطلبات:</span>
+        <a href="tel:01145295914" class="text-brand-gold font-bold">01145295914</a>
       </div>
     </div>
   </footer>
 
-  <!-- النافذة المنبثقة للطلب -->
+  <!-- النافذة المنبثقة للطلب (مع الحساب التلقائي للتوصيل والبيكسل) -->
   <div id="orderModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-[#15100a] border border-stone-700 w-full max-w-lg rounded-3xl p-5 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto custom-scroll">
       
@@ -490,7 +1268,7 @@
           <span id="modalItemTitle" class="text-sm font-black text-white"></span>
         </div>
         <div class="flex justify-between items-center text-xs">
-          <span class="text-stone-400">سعر الوجبات:</span>
+          <span class="text-stone-400">قيمة الطلب:</span>
           <span id="modalMealsSubtotal" class="font-bold text-stone-200"></span>
         </div>
         <div class="flex justify-between items-center text-xs">
@@ -506,8 +1284,8 @@
       <!-- عداد تحديد الكمية -->
       <div class="flex items-center justify-between bg-stone-900 border border-stone-800 p-3 rounded-2xl mb-4">
         <div>
-          <span class="text-xs font-bold text-stone-200 block">عدد الوجبات:</span>
-          <span id="qtyHintText" class="text-[10px] text-brand-gold font-bold">أضف وجبة أخرى واحصل على توصيل مجاني!</span>
+          <span class="text-xs font-bold text-stone-200 block">الكمية:</span>
+          <span id="qtyHintText" class="text-[10px] text-brand-gold font-bold">توصيل مجاني عند طلب وجبتين فأكثر!</span>
         </div>
         <div class="flex items-center gap-3">
           <button type="button" onclick="updateQuantity(-1)" class="w-8 h-8 rounded-xl bg-stone-800 hover:bg-stone-700 text-brand-gold font-black flex items-center justify-center transition active:scale-95 text-base">-</button>
@@ -540,7 +1318,7 @@
           <label class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-xl cursor-pointer hover:border-brand-gold/50 transition">
             <div class="flex items-center gap-2">
               <input type="checkbox" class="addon-checkbox accent-brand-gold w-4 h-4" data-name="بسبوسة بالمكسرات" data-price="35" onchange="calculateOrderTotal()">
-              <span class="text-stone-300">بسبوسة مكسرات</span>
+              <span class="text-stone-300">بسبوسة بالمكسرات</span>
             </div>
             <span class="text-brand-gold font-bold">+35 ج</span>
           </label>
@@ -556,7 +1334,6 @@
 
       <!-- نموذج البيانات الإلزامي -->
       <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4 text-right">
-        
         <div>
           <label class="block text-xs font-bold text-stone-300 mb-1.5">الاسم بالكامل <span class="text-red-500">*</span></label>
           <input type="text" id="custName" required placeholder="أدخل اسمك الكريم"
@@ -615,22 +1392,21 @@
           </div>
         </div>
 
-        <!-- شرط خاص بالعزومات -->
+        <!-- شرط خاص بالعزومات والبوفيه -->
         <div id="cateringNoticeBox" class="hidden bg-amber-950/60 border-2 border-amber-500/80 p-3.5 rounded-2xl space-y-2">
           <div class="flex items-start gap-2">
             <i class="fa-solid fa-triangle-exclamation text-brand-gold text-base mt-0.5"></i>
             <div class="text-xs text-amber-200">
-              <span class="font-bold text-brand-gold block">شرط حجز العزومات:</span>
-              نظراً لتجهيز وجبات العزومات بمكونات طازجة ومخصصة، يلزم سداد <span class="underline font-bold text-white">عربون حجز مسبق</span> لتأكيد الطلب.
+              <span class="font-bold text-brand-gold block">شرط حجز المناسبات والبوفيه:</span>
+              نظراً لتجهيز وجبات المناسبات بمكونات مخصصة وطازجة، يلزم سداد <span class="underline font-bold text-white">عربون حجز مسبق</span> لتأكيد موعد التسليم.
             </div>
           </div>
           <label class="flex items-center gap-2 text-xs font-bold text-white bg-black/40 p-2 rounded-xl border border-amber-600/40 cursor-pointer">
             <input type="checkbox" id="depositAgreement" class="w-4 h-4 accent-brand-gold">
-            <span>أوافق وأتعهد بدفع عربون تأكيد حجز العزومة <span class="text-red-400">*</span></span>
+            <span>أوافق وأتعهد بدفع عربون تأكيد حجز البوفيه <span class="text-red-400">*</span></span>
           </label>
         </div>
 
-        <!-- زر الإرسال -->
         <button type="submit" class="w-full bg-brand-green hover:bg-emerald-600 text-white font-black py-3 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
           <i class="fa-brands fa-whatsapp text-xl"></i>
           <span>إرسال الطلب عبر واتساب</span>
@@ -639,7 +1415,7 @@
     </div>
   </div>
 
-  <!-- المنطق البرمجي: PWA + Meta Pixel Tracking + الواتساب -->
+  <!-- المنطق البرمجي للتحكم والتتبع والطلب -->
   <script>
     const WHATSAPP_PHONE = "201145295914";
     const DELIVERY_STANDARD_FEE = 75;
@@ -683,15 +1459,6 @@
       }
     }
 
-    function scrollSlider(direction) {
-      const slider = document.getElementById('mealsSlider');
-      const scrollAmount = 280;
-      slider.scrollBy({
-        left: direction * -scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-
     let currentOrder = {
       title: "",
       unitPrice: 0,
@@ -704,7 +1471,7 @@
       currentOrder.title = title;
       currentOrder.unitPrice = price;
       currentOrder.quantity = 1;
-      currentOrder.isCatering = isCatering || title.includes("عزوم") || title.includes("العزومات");
+      currentOrder.isCatering = isCatering || title.includes("عزوم") || title.includes("أفراح") || title.includes("بوفيه");
 
       document.getElementById('orderQtyDisplay').textContent = currentOrder.quantity;
       document.querySelectorAll('.addon-checkbox').forEach(cb => cb.checked = false);
@@ -746,7 +1513,7 @@
       const hintText = document.getElementById('qtyHintText');
 
       if (currentOrder.unitPrice === 0) {
-        document.getElementById('modalMealsSubtotal').textContent = 'حسب الاختيار';
+        document.getElementById('modalMealsSubtotal').textContent = 'حسب الاختيار والتحديد';
         document.getElementById('modalDeliveryFee').textContent = '75 ج (أو مجاني لوجبتين+)';
         document.getElementById('modalItemPrice').textContent = 'يحدد مع الإدارة';
         hintText.textContent = 'توصيل مجاني عند طلب وجبتين فأكثر!';
@@ -769,7 +1536,7 @@
         hintText.innerHTML = `<span class="text-emerald-400 font-bold">مبروك! حصلت على توصيل مجاني 🎉</span>`;
       } else {
         document.getElementById('modalDeliveryFee').textContent = `${DELIVERY_STANDARD_FEE} جنيه`;
-        hintText.textContent = `أضف وجبة أخرى واحصل على توصيل مجاني (وفر 75 ج)!`;
+        hintText.textContent = `أضف صنفاً آخر واحصل على توصيل مجاني (وفر 75 ج)!`;
       }
 
       currentOrder.total = mealsSubtotal + addonsSum + deliveryFee;
@@ -812,7 +1579,7 @@
       }
 
       if (currentOrder.isCatering && !depositAgreement.checked) {
-        alert("تنبيه: حجز العزومات يتطلب الموافقة على سداد العربون لتأكيد الطلب.");
+        alert("تنبيه: حجز البوفيه والمناسبات يتطلب الموافقة على سداد العربون لتأكيد الطلب.");
         depositAgreement.focus();
         return;
       }
@@ -836,17 +1603,19 @@
       const deliveryText = currentOrder.quantity >= 2 ? 'مجاني 🎉 (عرض الوجبتين)' : `${DELIVERY_STANDARD_FEE} جنيه`;
 
       let msg = `مرحباً "ملح وملاح" 👋\n`;
-      msg += `أود تأكيد طلب جديد من خلال المنيو:\n\n`;
+      msg += `أود تأكيد طلب جديد من خلال المنيو الإلكتروني:\n\n`;
       msg += `🍽️ *تفاصيل الطلب:*\n`;
-      msg += `• الوجبة: *${currentOrder.title}*\n`;
-      msg += `• الكمية: *${currentOrder.quantity} وجبة*\n`;
-      msg += `• سعر الوجبات: *${currentOrder.unitPrice * currentOrder.quantity} جنيه*\n`;
+      msg += `• الصنف: *${currentOrder.title}*\n`;
+      msg += `• الكمية: *${currentOrder.quantity}*\n`;
+      if (currentOrder.unitPrice > 0) {
+        msg += `• سعر الأصناف: *${currentOrder.unitPrice * currentOrder.quantity} جنيه*\n`;
+      }
       
       if (selectedAddons.length > 0) {
         msg += `• الإضافات: *${selectedAddons.join(' + ')}*\n`;
       }
       
-      msg += `• رسوم التوصيل: *${deliveryText}*\n`;
+      msg += `• خدمة التوصيل: *${deliveryText}*\n`;
       msg += `💰 *الإجمالي النهائي المطلوب:* *${totalText}*\n\n`;
       msg += `👤 *بيانات العميل والتوصيل:*\n`;
       msg += `• الاسم: *${name}*\n`;
@@ -856,7 +1625,7 @@
       msg += `• طريقة الدفع: *${payment}*\n`;
 
       if (currentOrder.isCatering) {
-        msg += `\n⚠️ *ملاحظة حجز عزومة:* تم الإقرار بدفع عربون الحجز، برجاء إرسال تفاصيل التحويل لتأكيد التجهيز.`;
+        msg += `\n⚠️ *ملاحظة حجز مناسبة/بوفيه:* تم الإقرار بدفع عربون الحجز، برجاء إرسال تفاصيل التحويل لتأكيد التجهيز.`;
       }
 
       const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
