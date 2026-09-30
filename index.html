@@ -89,6 +89,7 @@
 
     <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
       <a href="#hero" class="text-brand-gold border-b-2 border-brand-gold pb-1">الرئيسية</a>
+      <a href="#weekly-tray" class="text-amber-400 hover:text-brand-gold transition font-bold">صينية الأسبوع</a>
       <a href="#meat" class="text-stone-300 hover:text-brand-gold transition">اللحوم</a>
       <a href="#stews" class="text-stone-300 hover:text-brand-gold transition">الأطباق والملاح</a>
       <a href="#bakery" class="text-stone-300 hover:text-brand-gold transition">المخبوزات</a>
@@ -112,6 +113,9 @@
 
   <!-- شريط تصنيفات المنيو السريع (Sticky Navigation) -->
   <div class="sticky top-[58px] z-30 bg-[#120d09]/95 backdrop-blur-md border-b border-stone-800 py-2.5 px-4 overflow-x-auto whitespace-nowrap custom-scroll flex gap-2 justify-start sm:justify-center">
+    <a href="#weekly-tray" class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-950 to-amber-950 border border-brand-gold text-xs text-brand-gold font-bold hover:bg-brand-gold hover:text-black transition flex items-center gap-1.5 shadow">
+      🔥 صينية الأسبوع
+    </a>
     <a href="#meat" class="px-3.5 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-xs text-stone-200 hover:border-brand-gold hover:text-brand-gold transition flex items-center gap-1.5">
       <i class="fa-solid fa-drumstick-bite text-brand-gold"></i> اللحوم والشواوي
     </a>
@@ -164,12 +168,12 @@
                 <h4 class="font-black text-sm sm:text-base text-white">توصيل مجاني 100% عند طلب وجبتين أو أكثر!</h4>
               </div>
               <p class="text-xs text-stone-300 mt-0.5">
-                توصيل الوجبة الفردية <span class="text-brand-gold font-bold">75 ج.م</span> .. اطلب وجبتين واستفد بالتوصيل المجاني لكافة المناطق المحددة.
+                توصيل الوجبة الفردية <span class="text-brand-gold font-bold">75 ج.م</span> .. اطلب وجبتين أو صينية الأسبوع ووفر التوصيل بالكامل.
               </p>
             </div>
           </div>
-          <a href="#meat" class="flex-shrink-0 bg-brand-gold hover:bg-amber-500 text-black font-black text-xs px-5 py-2.5 rounded-full transition transform hover:scale-105 shadow-md">
-            تصفح القائمة &darr;
+          <a href="#weekly-tray" class="flex-shrink-0 bg-brand-gold hover:bg-amber-500 text-black font-black text-xs px-5 py-2.5 rounded-full transition transform hover:scale-105 shadow-md">
+            عرض صينية الأسبوع &darr;
           </a>
         </div>
       </div>
@@ -183,8 +187,61 @@
     </div>
   </header>
 
+  <!-- ========================================== -->
+  <!-- قسم: صينية الأسبوع السودانية (عرض الصينية + الأطباق) -->
+  <!-- ========================================== -->
+  <section id="weekly-tray" class="py-12 px-4 max-w-6xl mx-auto border-t-2 border-brand-gold/30">
+    <div class="text-center max-w-2xl mx-auto mb-6">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-red-950 via-amber-950 to-red-950 border border-brand-gold/50 px-4 py-1.5 rounded-full text-brand-gold text-xs font-black shadow-inner">
+        <span>🇸🇩 عندنا صينية سودانية</span>
+        <span>•</span>
+        <span>وكل أسبوع صينية مختلفة عشان ماتقولوا حارمنكم من حاجة ❤️</span>
+      </div>
+      <h3 id="trayHeadingTitle" class="text-3xl lg:text-4xl font-black text-brand-gold mt-3">صينية الأسبوع السودانية</h3>
+      <p id="trayHeadingSubtitle" class="text-stone-300 text-xs sm:text-sm mt-1">تشكيلة مميزة ومختارة بعناية لأجمل نكهات البيت السوداني</p>
+    </div>
+
+    <!-- كارت العرض المجمع للصينية بالكامل -->
+    <div class="bg-gradient-to-br from-[#26180c] via-[#161009] to-[#0d0905] border-2 border-brand-gold/80 rounded-3xl p-5 sm:p-7 shadow-2xl relative overflow-hidden mb-8">
+      <div class="absolute -top-1 -right-1 bg-gradient-to-r from-red-600 to-amber-600 text-white font-black text-[11px] sm:text-xs px-4 py-1 rounded-bl-2xl shadow-lg">
+        وفر 150 ج.م + توصيل مجاني 🔥
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div class="text-right space-y-2 max-w-2xl">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="bg-emerald-600 text-white text-[11px] font-black px-3 py-0.5 rounded-full">توصيل مجاني 100%</span>
+            <h4 class="text-xl sm:text-2xl font-black text-white">عرض صينية الأسبوع المتكاملة (4 أطباق)</h4>
+          </div>
+          <p id="trayComboDescription" class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            تشمل الصينية: <span class="text-brand-gold font-bold">ملاح نعيمة</span> + <span class="text-brand-gold font-bold">أقاشي دجاج</span> + <span class="text-brand-gold font-bold">امفتقت</span> + <span class="text-brand-gold font-bold">سلطة أسود</span>
+          </p>
+          <div class="pt-2 flex items-baseline gap-3">
+            <span class="text-xs text-stone-400">سعر الصينية بالعرض:</span>
+            <span id="trayComboPriceDisplay" class="text-3xl sm:text-4xl font-black text-brand-gold">650 ج.م</span>
+            <span id="trayOriginalPriceDisplay" class="text-base text-stone-500 line-through">800 ج.م</span>
+          </div>
+        </div>
+
+        <!-- الزر رقم 1: طلب الصينية مجمعة -->
+        <button onclick="orderWeeklyCombo()" class="w-full lg:w-auto flex-shrink-0 bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold text-black font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-xl transition transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-cart-shopping text-lg"></i>
+          <span id="trayComboBtnText">اطلب صينية الأسبوع كاملة (650 ج.م)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- شبكة الأطباق الأربعة (التحكم السهل والتوليد التلقائي) -->
+    <div class="flex items-center justify-between mb-3">
+      <h4 class="text-base font-extrabold text-stone-200">أو يمكنك طلب كل طبق منفرداً بسعره العادي:</h4>
+    </div>
+    <div id="weeklyDishesContainer" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <!-- يتم توليد الأطباق الأربعة تلقائياً بأكواد وأزرار مستقلة عبر السكربت -->
+    </div>
+  </section>
+
   <!-- 1. قسم اللحوم والشواوي -->
-  <section id="meat" class="py-10 px-4 max-w-6xl mx-auto">
+  <section id="meat" class="py-10 px-4 max-w-6xl mx-auto border-t border-stone-900">
     <div class="flex items-center justify-between mb-4">
       <div>
         <h3 class="text-2xl font-black text-brand-gold flex items-center gap-2">
@@ -197,7 +254,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- امفتقت -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/amfitqat.webp" loading="lazy" class="h-36 w-full object-cover" alt="امفتقت">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -211,7 +267,6 @@
         </div>
       </div>
 
-      <!-- بفتيك -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/boftek.webp" loading="lazy" class="h-36 w-full object-cover" alt="بفتيك">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -225,7 +280,6 @@
         </div>
       </div>
 
-      <!-- بانية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/pane.webp" loading="lazy" class="h-36 w-full object-cover" alt="بانية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -239,7 +293,6 @@
         </div>
       </div>
 
-      <!-- كبدة (نصف كيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/kebda.webp" loading="lazy" class="h-36 w-full object-cover" alt="كبدة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -253,7 +306,6 @@
         </div>
       </div>
 
-      <!-- دمعة لحم (نصف كيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/damat-lahm.webp" loading="lazy" class="h-36 w-full object-cover" alt="دمعة لحم">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -267,7 +319,6 @@
         </div>
       </div>
 
-      <!-- ضلع ضأن -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/dila-daan.webp" loading="lazy" class="h-36 w-full object-cover" alt="ضلع ضأن">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -281,7 +332,6 @@
         </div>
       </div>
 
-      <!-- ضلع عجال -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/dila-ajal.webp" loading="lazy" class="h-36 w-full object-cover" alt="ضلع عجال">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -295,7 +345,6 @@
         </div>
       </div>
 
-      <!-- كفتريتة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/kaftareeta.webp" loading="lazy" class="h-36 w-full object-cover" alt="كفتريتة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -309,7 +358,6 @@
         </div>
       </div>
 
-      <!-- كباب (نصف كيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/kebab.webp" loading="lazy" class="h-36 w-full object-cover" alt="كباب">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -323,7 +371,6 @@
         </div>
       </div>
 
-      <!-- كفتوتة (نصف كيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/kaftoota.webp" loading="lazy" class="h-36 w-full object-cover" alt="كفتوتة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -337,7 +384,6 @@
         </div>
       </div>
 
-      <!-- شية صالح (الكيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/shaya-saleh.webp" loading="lazy" class="h-36 w-full object-cover" alt="شية صالح">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -351,7 +397,6 @@
         </div>
       </div>
 
-      <!-- شية جمر (الكيلو) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/shaya-gamr.webp" loading="lazy" class="h-36 w-full object-cover" alt="شية جمر">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -365,7 +410,6 @@
         </div>
       </div>
 
-      <!-- أقاشي فراخ -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/agashi-chicken.webp" loading="lazy" class="h-36 w-full object-cover" alt="أقاشي فراخ">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -379,7 +423,6 @@
         </div>
       </div>
 
-      <!-- أقاشي لحمة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/meat/agashi-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="أقاشي لحمة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -409,7 +452,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- ملاح نعيمة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/naeema.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح نعيمة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -423,7 +465,6 @@
         </div>
       </div>
 
-      <!-- ملاح تقلية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/teqliya.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح تقلية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -437,7 +478,6 @@
         </div>
       </div>
 
-      <!-- ملاح روب أبيض -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/rob-abyad.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح روب أبيض">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -451,7 +491,6 @@
         </div>
       </div>
 
-      <!-- ملاح خضرة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/khodra.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملاح خضرة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -465,7 +504,6 @@
         </div>
       </div>
 
-      <!-- طبيخ لوبيا -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/loubia.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ لوبيا">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -479,7 +517,6 @@
         </div>
       </div>
 
-      <!-- بامية طبيخ -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/bamya-tabeekh.webp" loading="lazy" class="h-36 w-full object-cover" alt="بامية طبيخ">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -493,7 +530,6 @@
         </div>
       </div>
 
-      <!-- ملوخية طبيخ -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/molokhia.webp" loading="lazy" class="h-36 w-full object-cover" alt="ملوخية طبيخ">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -507,7 +543,6 @@
         </div>
       </div>
 
-      <!-- طبيخ قرع -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/qara.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ قرع">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -521,7 +556,6 @@
         </div>
       </div>
 
-      <!-- طبيخ رجلة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/rigla.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ رجلة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -535,7 +569,6 @@
         </div>
       </div>
 
-      <!-- طبيخ فاصوليا -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/stews/fasolia.webp" loading="lazy" class="h-36 w-full object-cover" alt="طبيخ فاصوليا">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -565,7 +598,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- بسكويت شاي -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/biscuit-tea.webp" loading="lazy" class="h-36 w-full object-cover" alt="بسكويت شاي">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -579,7 +611,6 @@
         </div>
       </div>
 
-      <!-- كعك سادة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/kahk-sada.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك سادة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -593,7 +624,6 @@
         </div>
       </div>
 
-      <!-- كعك عجوة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/kahk-agwa.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك عجوة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -607,7 +637,6 @@
         </div>
       </div>
 
-      <!-- كعك جوز -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/kahk-gouz.webp" loading="lazy" class="h-36 w-full object-cover" alt="كعك جوز">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -621,7 +650,6 @@
         </div>
       </div>
 
-      <!-- غريبة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/ghorayeba.webp" loading="lazy" class="h-36 w-full object-cover" alt="غريبة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -635,7 +663,6 @@
         </div>
       </div>
 
-      <!-- جوزية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/gawziya.webp" loading="lazy" class="h-36 w-full object-cover" alt="جوزية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -649,7 +676,6 @@
         </div>
       </div>
 
-      <!-- بيتي فور -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/petit-four.webp" loading="lazy" class="h-36 w-full object-cover" alt="بيتي فور">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -663,7 +689,6 @@
         </div>
       </div>
 
-      <!-- منين -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/maneen.webp" loading="lazy" class="h-36 w-full object-cover" alt="منين">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -677,7 +702,6 @@
         </div>
       </div>
 
-      <!-- قرقوش -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/qorqoosh.webp" loading="lazy" class="h-36 w-full object-cover" alt="قرقوش">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -691,7 +715,6 @@
         </div>
       </div>
 
-      <!-- يانسون -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/yansoon.webp" loading="lazy" class="h-36 w-full object-cover" alt="يانسون">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -705,7 +728,6 @@
         </div>
       </div>
 
-      <!-- دراي كيك -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/dry-cake.webp" loading="lazy" class="h-36 w-full object-cover" alt="دراي كيك">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -719,7 +741,6 @@
         </div>
       </div>
 
-      <!-- لانكشير -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/bakery/lancashire.webp" loading="lazy" class="h-36 w-full object-cover" alt="لانكشير">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -749,7 +770,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- فطاير لحمة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pastries/fatayer-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="فطاير لحمة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -763,7 +783,6 @@
         </div>
       </div>
 
-      <!-- فطاير خضار -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pastries/fatayer-veg.webp" loading="lazy" class="h-36 w-full object-cover" alt="فطاير خضار">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -777,7 +796,6 @@
         </div>
       </div>
 
-      <!-- بيتزا -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pastries/pizza.webp" loading="lazy" class="h-36 w-full object-cover" alt="بيتزا">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -791,7 +809,6 @@
         </div>
       </div>
 
-      <!-- كرواسان -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pastries/croissant.webp" loading="lazy" class="h-36 w-full object-cover" alt="كرواسان">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -821,7 +838,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- سلطة مش -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/mish.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة مش">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -835,7 +851,6 @@
         </div>
       </div>
 
-      <!-- سلطة روب -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/rob.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة روب">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -849,7 +864,6 @@
         </div>
       </div>
 
-      <!-- سلطة بيضاء -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/salata-bayda.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة بيضاء">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -863,7 +877,6 @@
         </div>
       </div>
 
-      <!-- سلطة هندية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/salata-hendiya.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة هندية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -877,7 +890,6 @@
         </div>
       </div>
 
-      <!-- سلطة أسود محمرة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/aswad-mohamara.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة أسود محمرة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -891,7 +903,6 @@
         </div>
       </div>
 
-      <!-- سلطة أسود مشوية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/salads/aswad-mashwiya.webp" loading="lazy" class="h-36 w-full object-cover" alt="سلطة أسود مشوية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -921,7 +932,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- مكرونة بشاميل -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pasta/bechamel.webp" loading="lazy" class="h-36 w-full object-cover" alt="مكرونة بشاميل">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -935,7 +945,6 @@
         </div>
       </div>
 
-      <!-- مكرونة نجرسكو -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/pasta/negresco.webp" loading="lazy" class="h-36 w-full object-cover" alt="مكرونة نجرسكو">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -949,7 +958,6 @@
         </div>
       </div>
 
-      <!-- محشي مشكل -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/mahshi/mahshi-moshakal.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي مشكل">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -963,7 +971,6 @@
         </div>
       </div>
 
-      <!-- محشي ورق عنب -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/mahshi/waraq-enab.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي ورق عنب">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -977,7 +984,6 @@
         </div>
       </div>
 
-      <!-- محشي كرنب -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/mahshi/kromb.webp" loading="lazy" class="h-36 w-full object-cover" alt="محشي كرنب">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1007,7 +1013,6 @@
     </div>
 
     <div class="flex gap-4 overflow-x-auto pb-4 custom-scroll snap-x snap-mandatory scroll-smooth">
-      <!-- كوكتيل أفراح 3 أصناف -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
         <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
         <img src="./assets/catering/cocktail-3.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل 3 أصناف">
@@ -1022,7 +1027,6 @@
         </div>
       </div>
 
-      <!-- كوكتيل أفراح 2 صنف -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
         <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
         <img src="./assets/catering/cocktail-2.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل 2 صنف">
@@ -1037,7 +1041,6 @@
         </div>
       </div>
 
-      <!-- كوكتيل أفراح صنف واحد -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-amber-950/40 border border-amber-800/60 rounded-2xl overflow-hidden hover:border-brand-gold transition flex flex-col justify-between shadow-lg relative">
         <span class="absolute top-2 right-2 bg-brand-gold text-black text-[9px] font-black px-2 py-0.5 rounded-full">عربون مسبق</span>
         <img src="./assets/catering/cocktail-1.webp" loading="lazy" class="h-36 w-full object-cover" alt="كوكتيل صنف واحد">
@@ -1052,7 +1055,6 @@
         </div>
       </div>
 
-      <!-- زغني لحمة -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/zighni-meat.webp" loading="lazy" class="h-36 w-full object-cover" alt="زغني لحمة">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1066,7 +1068,6 @@
         </div>
       </div>
 
-      <!-- زغني فراخ -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/zighni-chicken.webp" loading="lazy" class="h-36 w-full object-cover" alt="زغني فراخ">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1080,7 +1081,6 @@
         </div>
       </div>
 
-      <!-- سجق / سبخ -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/sejeq.webp" loading="lazy" class="h-36 w-full object-cover" alt="سجق">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1094,7 +1094,6 @@
         </div>
       </div>
 
-      <!-- بوش سوداني -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/boush.webp" loading="lazy" class="h-36 w-full object-cover" alt="بوش سوداني">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1108,7 +1107,6 @@
         </div>
       </div>
 
-      <!-- فتة عدس -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/fattet-adas.webp" loading="lazy" class="h-36 w-full object-cover" alt="فتة عدس">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1122,7 +1120,6 @@
         </div>
       </div>
 
-      <!-- كسرة بالطماطم -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/kisra-tamtem.webp" loading="lazy" class="h-36 w-full object-cover" alt="كسرة بالطماطم">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1136,7 +1133,6 @@
         </div>
       </div>
 
-      <!-- طعمية (للقطعة) -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/tameya.webp" loading="lazy" class="h-36 w-full object-cover" alt="طعمية سودانية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1150,7 +1146,6 @@
         </div>
       </div>
 
-      <!-- شطة سودانية -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/shatta.webp" loading="lazy" class="h-36 w-full object-cover" alt="شطة سودانية">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1164,7 +1159,6 @@
         </div>
       </div>
 
-      <!-- مخلل -->
       <div class="w-[210px] sm:w-[230px] flex-shrink-0 snap-start bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
         <img src="./assets/sides/mokhalal.webp" loading="lazy" class="h-36 w-full object-cover" alt="مخلل">
         <div class="p-3 text-right flex-grow flex flex-col justify-between">
@@ -1417,6 +1411,81 @@
 
   <!-- المنطق البرمجي للتحكم والتتبع والطلب -->
   <script>
+    // =========================================================================
+    // ⚙️ إعدادات صينية الأسبوع (يمكنك تعديل هذه الأسطر فقط كل أسبوع بكل سهولة)
+    // =========================================================================
+    const WEEKLY_TRAY_CONFIG = {
+      title: "صينية الأسبوع السودانية",
+      subtitle: "عندنا صينية سودانية وكل أسبوع صينية مختلفة عشان ماتقولوا حارمنكم من حاجة ❤️",
+      comboPrice: 650,    // سعر عرض الصينية بالكامل
+      originalPrice: 800, // إجمالي سعر الأطباق لو طلبت منفردة
+      dishes: [
+        {
+          name: "ملاح نعيمة",
+          price: 280,
+          img: "./assets/stews/naeema.webp"
+        },
+        {
+          name: "أقاشي دجاج",
+          price: 250,
+          img: "./assets/meat/agashi-chicken.webp"
+        },
+        {
+          name: "امفتقت",
+          price: 150,
+          img: "./assets/meat/amfitqat.webp"
+        },
+        {
+          name: "سلطة أسود",
+          price: 120,
+          img: "./assets/salads/aswad-mohamara.webp"
+        }
+      ]
+    };
+
+    // دالة بناء وتحديث قسم صينية الأسبوع برمجياً
+    function renderWeeklyTray() {
+      const container = document.getElementById('weeklyDishesContainer');
+      const comboDesc = document.getElementById('trayComboDescription');
+      const comboPriceDisp = document.getElementById('trayComboPriceDisplay');
+      const origPriceDisp = document.getElementById('trayOriginalPriceDisplay');
+      const comboBtnText = document.getElementById('trayComboBtnText');
+
+      if (!container) return;
+
+      // تحديث أسماء الأطباق في الوصف الترويجي
+      const dishNames = WEEKLY_TRAY_CONFIG.dishes.map(d => `<span class="text-brand-gold font-bold">${d.name}</span>`).join(' + ');
+      comboDesc.innerHTML = `تشمل الصينية: ${dishNames}`;
+      comboPriceDisp.textContent = `${WEEKLY_TRAY_CONFIG.comboPrice} ج.م`;
+      origPriceDisp.textContent = `${WEEKLY_TRAY_CONFIG.originalPrice} ج.م`;
+      comboBtnText.textContent = `اطلب صينية الأسبوع كاملة (${WEEKLY_TRAY_CONFIG.comboPrice} ج.م)`;
+
+      // توليد الكروت الأربعة للأطباق المنفردة (الأزرار 2 و 3 و 4 و 5)
+      container.innerHTML = WEEKLY_TRAY_CONFIG.dishes.map(dish => `
+        <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-brand-gold/60 transition flex flex-col justify-between shadow-lg">
+          <img src="${dish.img}" loading="lazy" class="h-32 sm:h-36 w-full object-cover" alt="${dish.name}">
+          <div class="p-3 text-right flex-grow flex flex-col justify-between">
+            <div>
+              <h5 class="font-bold text-xs sm:text-sm text-white truncate">${dish.name}</h5>
+              <span class="font-black text-brand-gold text-xs sm:text-sm block my-1">${dish.price} ج.م</span>
+            </div>
+            <button onclick="openOrderModal('${dish.name} (طلب منفرد)', ${dish.price}, false)" class="w-full mt-2 bg-stone-800 hover:bg-stone-700 text-stone-200 hover:text-white font-bold py-1.5 px-2 rounded-xl text-[11px] sm:text-xs flex items-center justify-center gap-1 transition active:scale-95 border border-stone-700">
+              <i class="fa-solid fa-plus text-[10px]"></i> طلب الطبق
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // دالة طلب الصينية كاملة بالعرض والتوصيل المجاني (الزر رقم 1)
+    function orderWeeklyCombo() {
+      const allDishes = WEEKLY_TRAY_CONFIG.dishes.map(d => d.name).join(' + ');
+      const title = `${WEEKLY_TRAY_CONFIG.title} (${allDishes})`;
+      openOrderModal(title, WEEKLY_TRAY_CONFIG.comboPrice, false, true);
+    }
+
+    // =========================================================================
+
     const WHATSAPP_PHONE = "201145295914";
     const DELIVERY_STANDARD_FEE = 75;
 
@@ -1464,14 +1533,16 @@
       unitPrice: 0,
       quantity: 1,
       isCatering: false,
+      isFreeDelivery: false,
       total: 0
     };
 
-    function openOrderModal(title, price = 0, isCatering = false) {
+    function openOrderModal(title, price = 0, isCatering = false, isFreeDelivery = false) {
       currentOrder.title = title;
       currentOrder.unitPrice = price;
       currentOrder.quantity = 1;
       currentOrder.isCatering = isCatering || title.includes("عزوم") || title.includes("أفراح") || title.includes("بوفيه");
+      currentOrder.isFreeDelivery = isFreeDelivery || title.includes("صينية الأسبوع");
 
       document.getElementById('orderQtyDisplay').textContent = currentOrder.quantity;
       document.querySelectorAll('.addon-checkbox').forEach(cb => cb.checked = false);
@@ -1527,11 +1598,14 @@
       });
 
       const mealsSubtotal = currentOrder.unitPrice * currentOrder.quantity;
-      const deliveryFee = currentOrder.quantity >= 2 ? 0 : DELIVERY_STANDARD_FEE;
+      
+      // التوصيل مجاني إذا كانت وجبتين فأكثر أو إذا كان الطلب لعرض الصينية
+      const isFree = currentOrder.quantity >= 2 || currentOrder.isFreeDelivery;
+      const deliveryFee = isFree ? 0 : DELIVERY_STANDARD_FEE;
 
       document.getElementById('modalMealsSubtotal').textContent = `${mealsSubtotal} جنيه (${currentOrder.quantity} × ${currentOrder.unitPrice})`;
       
-      if (currentOrder.quantity >= 2) {
+      if (isFree) {
         document.getElementById('modalDeliveryFee').innerHTML = `<span class="text-emerald-400 font-black">مجاناً 🎉 (وفرت 75 ج)</span>`;
         hintText.innerHTML = `<span class="text-emerald-400 font-bold">مبروك! حصلت على توصيل مجاني 🎉</span>`;
       } else {
@@ -1598,9 +1672,10 @@
         selectedAddons.push(`${cb.dataset.name} (+${cb.dataset.price} ج)`);
       });
 
+      const isFree = currentOrder.quantity >= 2 || currentOrder.isFreeDelivery;
       const timingFinal = timingType === 'لاحقاً' ? `لاحقاً (${customTime})` : 'الآن (بأسرع وقت)';
       const totalText = currentOrder.total > 0 ? `${currentOrder.total} جنيه` : 'يحدد مع الإدارة';
-      const deliveryText = currentOrder.quantity >= 2 ? 'مجاني 🎉 (عرض الوجبتين)' : `${DELIVERY_STANDARD_FEE} جنيه`;
+      const deliveryText = isFree ? 'مجاني 🎉 (عرض خاص)' : `${DELIVERY_STANDARD_FEE} جنيه`;
 
       let msg = `مرحباً "ملح وملاح" 👋\n`;
       msg += `أود تأكيد طلب جديد من خلال المنيو الإلكتروني:\n\n`;
@@ -1640,6 +1715,9 @@
         closeOrderModal();
       }
     };
+
+    // تشغيل توليد صينية الأسبوع فور تحميل الصفحة
+    renderWeeklyTray();
   </script>
 </body>
 </html>
